@@ -98,12 +98,12 @@ export default function ServicesLayout({ children }) {
       {/* RIGHT CONTENT */}
       <div className="flex-1">
         {/* TOP TABS */}
-        <div className="flex gap-4 mb-8 border-b pb-3 sticky top-[125px] bg-white z-50 pt-4 -mx-6 px-6 shadow-sm">
+        <div className="flex gap-4 mb-8 border-b pb-3 sticky top-[125px] bg-white z-50 pt-4 -mx-6 px-6 shadow-sm w-[50%]">
           {tabs.map((t) => (
             <button
               key={t.id}
               onClick={() => scrollToSection(t.ref)}
-              className={`px-5 py-2 rounded-md transition-all duration-300 font-medium
+              className={`px-5 py-2 rounded-md transition-all duration-300 font-medium 
         ${activeTab === t.id
                   ? "bg-blue-900 text-white"
                   : "bg-white text-blue-900 hover:bg-blue-100"
