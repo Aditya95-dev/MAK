@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function NavbarCyan() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -22,160 +23,125 @@ export default function NavbarCyan() {
   }, []);
 
   const services = [
-    { name: "Product Design & DVA", path: "/services/product-design-dva", icon: "" },
-    { name: "Reverse Engineering", path: "/services/reverse-engineering", icon: "" },
-    { name: "3D scanning & Product Benchmarking", path: "/services/3d-scanning-benchmarking", icon: "" },
-    { name: "CAD data conversion", path: "/services/cad-data-conversion", icon: "" },
-    {
-      name: "Finite Element Analysis (FEA)", path: "/services/fea", icon: ""
-    },
-    { name: "3D Printing/Rapid prototyping", path: "/services/3d-printing-rapid-prototyping", icon: "" },
-    { name: "Manufacturing/Prototyping", path: "/services/manufacturing-prototyping", icon: "" },
-    { name: "Product rendering ", path: "/services/product-rendering-technical-animation", icon: "" },
+    { name: "Product Design & DVA", path: "/services/product-design-dva" },
+    { name: "Reverse Engineering", path: "/services/reverse-engineering" },
+    { name: "3D scanning & Product Benchmarking", path: "/services/3d-scanning-benchmarking" },
+    { name: "CAD data conversion", path: "/services/cad-data-conversion" },
+    { name: "Finite Element Analysis (FEA)", path: "/services/fea" },
+    { name: "3D Printing / Rapid prototyping", path: "/services/3d-printing-rapid-prototyping" },
+    { name: "Manufacturing / Prototyping", path: "/services/manufacturing-prototyping" },
+    { name: "Product rendering & animation", path: "/services/product-rendering-technical-animation" },
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-white shadow-md" ref={dropdownRef}>
-      {/* Top Contact Bar */}
-      <div className="w-full bg-gradient-to-r from-[#062a66] to-[#6ca3de] text-white text-sm py-2.5 px-6 flex justify-between items-center">
-        <div className="flex gap-6 font-semibold">
-          <p className="flex items-center gap-2">📞 +91-9876543210</p>
-          <p className="flex items-center gap-2">✉️ contact@makdesignsolutions.com</p>
-        </div>
+    <header ref={dropdownRef} className="w-full sticky top-0 z-50 bg-white shadow-md">
 
-        <div className="hidden md:flex gap-4 font-semibold">
-          <a href="#" className="hover:underline transition">LinkedIn</a>
-          <a href="#" className="hover:underline transition">Instagram</a>
-          <a href="#" className="hover:underline transition">Facebook</a>
+      {/* Top Bar */}
+      <div className="w-full bg-gradient-to-r from-[#062a66] to-[#6ca3de] text-white text-sm py-2.5 px-6 flex justify-between">
+        <div className="flex gap-6 font-semibold">
+          <p>📞 +91-9876543210</p>
+          <p>✉️ contact@makdesignsolutions.com</p>
         </div>
       </div>
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto flex items-center justify-between py-5 px-6 relative">
-        {/* Logo */}
-        <div className="flex items-center gap-4">
-          <div className="w-28 h-24 md:w-32 md:h-10 rounded-lg overflow-hidden">
-            <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
-          </div>
-        </div>
 
-        {/* Hamburger for mobile */}
-        <div className="md:hidden flex items-center">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-gray-700 focus:outline-none p-2"
-          >
-            {mobileMenuOpen ? (
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
+        {/* Logo */}
+        <Link to="/" className="w-28 h-10">
+          <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
+        </Link>
+
+        {/* Mobile button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2"
+        >
+          ☰
+        </button>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-8 items-center text-base font-semibold text-gray-700">
-          <a href="/" className="hover:text-[#062a66] transition-colors duration-200 py-2">Home</a>
-          <a href="/about" className="hover:text-[#062a66] transition-colors duration-200 py-2">About</a>
+        <nav className="hidden md:flex gap-8 items-center font-semibold text-gray-700">
+          <Link to="/" className="hover:text-[#062a66]">Home</Link>
+          <Link to="/about" className="hover:text-[#062a66]">About</Link>
 
-          {/* Services Dropdown */}
+          {/* Services */}
           <div className="relative">
             <button
               onClick={() => toggleDropdown("services")}
-              className="flex items-center gap-1 hover:text-[#062a66] transition-colors duration-200 py-2"
+              className="flex items-center gap-1 hover:text-[#062a66]"
             >
               Services
               <ChevronDown
                 size={18}
-                className={`transition-transform duration-200 ${openDropdown === "services" ? "rotate-180" : ""}`}
+                className={`transition-transform ${openDropdown === "services" ? "rotate-180" : ""}`}
               />
             </button>
-            {openDropdown === "services" && (
-              <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-2xl w-80 overflow-hidden animate-[fadeIn_0.2s_ease-out]">
 
-                <div className="max-h-96 overflow-y-auto">
-                  {services.map((service, index) => (
-                    <a
-                      key={service.name}
-                      href={service.path}
-                      className={`flex items-start gap-3 px-5 py-3.5 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-200 group ${index !== services.length - 1 ? "border-b border-gray-100" : ""
-                        }`}
-                    >
-                      <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200">
-                        {service.icon}
-                      </span>
-                      <span className="text-gray-700 font-medium group-hover:text-[#062a66] transition-colors">
-                        {service.name}
-                      </span>
-                    </a>
-                  ))}
-                </div>
+            {openDropdown === "services" && (
+              <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-md shadow-2xl border border-gray-200 overflow-hidden">
+
+                {services.map((service) => (
+                  <Link
+                    key={service.name}
+                    to={service.path}
+                    className="block px-5 py-3.5 border-b border-gray-400
+                               last:border-b-0
+                               hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50
+                               text-gray-700 hover:text-[#062a66] transition"
+                    onClick={() => setOpenDropdown(null)}
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+
               </div>
             )}
           </div>
 
-          {/* <a href="/case-studies" className="hover:text-[#062a66] transition-colors duration-200 py-2">Case Studies</a> */}
-          {/* <a href="/process" className="hover:text-[#062a66] transition-colors duration-200 py-2">Process</a> */}
-          <a href="/blog" className="hover:text-[#062a66] transition-colors duration-200 py-2">Blog</a>
-          <a href="/contact" className="hover:text-[#062a66] transition-colors duration-200 py-2">Contact</a>
+          <Link to="/blog" className="hover:text-[#062a66]">Blog</Link>
+          <Link to="/contact" className="hover:text-[#062a66]">Contact</Link>
 
-          <a
-            href="/contact"
-            className="px-6 py-2.5 rounded-lg text-white bg-gradient-to-r from-[#062a66] to-[#6ca3de] hover:shadow-lg hover:scale-105 transition-all duration-200 font-semibold"
+          <Link
+            to="/contact"
+            className="px-6 py-2.5 rounded-lg text-white bg-gradient-to-r from-[#062a66] to-[#6ca3de]"
           >
             Contact Us
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white border-t shadow-lg z-50 max-h-[calc(100vh-180px)] overflow-y-auto">
-            <a href="/" className="block px-6 py-4 hover:bg-gray-50 font-medium text-base">Home</a>
-            <a href="/about" className="block px-6 py-4 hover:bg-gray-50 font-medium text-base">About</a>
+          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg">
 
-            {/* Services */}
-            <div className="border-t">
-              <button
-                onClick={() => toggleDropdown("services")}
-                className="w-full text-left px-6 py-4 hover:bg-gray-50 flex justify-between items-center font-medium text-base"
-              >
-                Services
-                <ChevronDown
-                  size={18}
-                  className={`transition-transform duration-200 ${openDropdown === "services" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openDropdown === "services" && (
-                <div className="bg-gradient-to-br from-gray-50 to-blue-50">
-                  {services.map((service) => (
-                    <a
-                      key={service.name}
-                      href={service.path}
-                      className="flex items-center gap-3 px-8 py-3 hover:bg-white/80 transition-colors border-b border-gray-100"
-                    >
-                      <span className="text-xl">{service.icon}</span>
-                      <span className="text-gray-700">{service.name}</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+            <Link to="/" className="block px-6 py-4 border-b">Home</Link>
+            <Link to="/about" className="block px-6 py-4 border-b">About</Link>
 
-            {/* <a href="/case-studies" className="block px-6 py-4 hover:bg-gray-50 font-medium text-base">Case Studies</a> */}
-            {/* <a href="/process" className="block px-6 py-4 hover:bg-gray-50 font-medium text-base">Process</a> */}
-            <a href="/blog" className="block px-6 py-4 hover:bg-gray-50 font-medium text-base">Blog</a>
-            <a href="/contact" className="block px-6 py-4 hover:bg-gray-50 font-medium text-base">Contact</a>
-
-            <a
-              href="/contact"
-              className="block mx-6 my-4 px-6 py-3 rounded-lg text-white bg-gradient-to-r from-[#062a66] to-[#6ca3de] hover:shadow-lg text-center font-semibold transition-all duration-200"
+            <button
+              onClick={() => toggleDropdown("services")}
+              className="w-full text-left px-6 py-4 border-b flex justify-between"
             >
-              Contact Us
-            </a>
+              Services
+              <ChevronDown />
+            </button>
+
+            {openDropdown === "services" &&
+              services.map((service) => (
+                <Link
+                  key={service.name}
+                  to={service.path}
+                  className="block px-10 py-3 border-b last:border-b-0"
+                  onClick={() => {
+                    setOpenDropdown(null);
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  {service.name}
+                </Link>
+              ))}
+
+            <Link to="/blog" className="block px-6 py-4 border-b">Blog</Link>
+            <Link to="/contact" className="block px-6 py-4">Contact</Link>
           </div>
         )}
       </div>

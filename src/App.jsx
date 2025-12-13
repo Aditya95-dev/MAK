@@ -29,16 +29,7 @@ const App = () => {
         // Individual service routes
         { path: "/services/product-design-dva", element: <PDD /> },
         { path: "/blog", element: <Blog /> },
-        { path:"/blog/cardone", element: <BlogCardOne/>},
-        // Future pages ↓
-        // { path: "/services/reverse-engineering", element: <ReverseEngineering /> },
-        // { path: "/services/3d-scanning-benchmarking", element: <ScanningBenchmarking /> },
-        // { path: "/services/cad-data-conversion", element: <CADConversion /> },
-        // { path: "/services/fea", element: <FEA /> },
-        // { path: "/services/3d-printing-rapid-prototyping", element: <RapidPrototyping /> },
-        // { path: "/services/manufacturing-prototyping", element: <Manufacturing /> },
-        // { path: "/services/product-rendering-technical-animation", element: <RenderingAnimation /> },
-
+        { path: "/blog/cardone", element: <BlogCardOne /> },
         { path: "/menu", element: <Menu /> },
         { path: "/celebratewithus", element: <CelebrateWithUs /> },
         { path: "/gallery", element: <Gallery /> },
