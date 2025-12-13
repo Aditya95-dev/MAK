@@ -6,7 +6,7 @@ export default function AboutUs() {
         {/* LEFT IMAGE */}
         <div className="w-full md:w-1/2 relative group">
           <div className="absolute inset-0 bg-blue-200 blur-3xl opacity-30 group-hover:opacity-50 transition duration-500 rounded-3xl"></div>
-
+  
           <img
             src="/about.png"
             alt="About MAK Design Solutions"
