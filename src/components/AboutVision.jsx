@@ -1,5 +1,8 @@
 import React from "react";
 import { FaEye, FaGem } from "react-icons/fa";
+import Vision from "../../public/images/vision.jpg";
+import Mission from "../../public/images/mission.jpg";
+import Values from "../../public/images/goals.jpg";
 
 
 export default function AboutVision() {
@@ -8,13 +11,15 @@ export default function AboutVision() {
             title: "Vision",
             color: "text-blue-700",
             borderColor: "border-blue-500",
+            bgImage: Vision,
             icon: <FaEye className="w-8 h-8" />,
             text: "To be a trusted partner in engineering design and digital-to-physical transformation. We turn ideas into functional, market-ready products using precision, technology, and innovation.",
         },
         {
             title: "Mission",
-            color: "text-orange-600",
-            borderColor: "border-orange-500",
+            color: "text-blue-600",
+            borderColor: "border-blue-500",
+            bgImage: Mission,
             icon: (
                 <img
                     src="/targeting.png"   // notice the leading slash
@@ -26,8 +31,9 @@ export default function AboutVision() {
         },
         {
             title: "Values",
-            color: "text-red-600",
-            borderColor: "border-red-500",
+            color: "text-blue-600",
+            borderColor: "border-blue-500",
+            bgImage: Values,
             icon: <FaGem className="w-8 h-8" />,
             text: "Customer Success, Ethics & Integrity, Transparency, Ownership, and Respect drive everything we do.",
         },
@@ -46,8 +52,9 @@ export default function AboutVision() {
                 {sections.map((sec, idx) => (
                     <div
                         key={idx}
-                        className={`bg-white border ${sec.borderColor} rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300 relative`}
+                        className={`bg-white border ${sec.borderColor} rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300 relative `}
                     >
+
                         {/* Circle Icon */}
                         <div className={`w-16 h-16 rounded-full bg-white border-2 ${sec.borderColor} flex items-center justify-center absolute -top-8 left-1/2 -translate-x-1/2 shadow-md`}>
                             {sec.icon}

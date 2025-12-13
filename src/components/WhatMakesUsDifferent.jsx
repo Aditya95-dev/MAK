@@ -143,6 +143,8 @@
 //     </section>
 //   );
 // }
+
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
@@ -221,7 +223,7 @@ export default function WhatMakesUsDifferent() {
         {/* LEFT CONTENT */}
         <div>
           <h2 className="text-4xl font-bold leading-tight text-gray-900">
-            WHY CHOOSE US
+            What Makes Us Different?
           </h2>
           <p className="mt-6 text-gray-600 text-lg">
             We deliver professional, reliable, and cost-effective engineering
