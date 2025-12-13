@@ -113,7 +113,7 @@ export default function WhatMakesUsDifferent() {
   return (
     <div className="w-full px-6 md:px-20 lg:px-32 py-20">
       <h2 className="text-4xl font-black text-center mb-16 text-gray-900 tracking-tight">
-        What Makes Us Different?
+        What Makes Us Different? 
       </h2>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-14 place-items-center">
