@@ -363,7 +363,7 @@ export default function ServicesLayout({ children }) {
                     alt={item.name}
                     className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center px-4 text-white bg-black text-[18px] font-medium  text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none fw-[800px]">
+                  <div className="absolute inset-0 flex items-center justify-center px-4 text-white bg-black text-[16px]   text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none ">
                     {item.description}
                   </div>
                 </div>
