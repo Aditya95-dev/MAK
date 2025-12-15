@@ -120,7 +120,7 @@ export default function Slider() {
           <div key={index} className="w-full flex-shrink-0 h-full relative">
             <img
               src={slide.img}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-content"
               alt={`Slide ${index + 1}`}
             />
           </div>
@@ -146,19 +146,7 @@ export default function Slider() {
       </button>
 
       {/* DOT INDICATORS */}
-      {/* <div className="absolute bottom-2 w-full flex justify-center gap-2">
-        {slides.map((_, i) => (
-          <div
-            key={i}
-            onClick={() => {
-              setIsTransition(true);
-              setCurrent(i);
-            }}
-            className={`w-2 h-2 rounded-full cursor-pointer transition ${current === i ? "bg-white" : "bg-black"
-              }`}
-          ></div>
-        ))}
-      </div> */}
+     
     </div>
   );
 }

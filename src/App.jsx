@@ -12,6 +12,7 @@ import PDD from "./pages/PDD";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import BlogCardOne from "./components/BlogCardOne";
+import ReverseEngineering from "./pages/Services/ReverseEngineering";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -28,6 +29,7 @@ const App = () => {
 
         // Individual service routes
         { path: "/services/product-design-dva", element: <PDD /> },
+        { path: "/services/reverse-engineering", element: <ReverseEngineering /> },
         { path: "/blog", element: <Blog /> },
         { path: "/blog/cardone", element: <BlogCardOne /> },
         { path: "/menu", element: <Menu /> },

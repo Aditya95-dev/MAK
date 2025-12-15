@@ -126,7 +126,7 @@ export default function ServicesLayout({ children }) {
                 <p>
                   At <strong>MAK Design Solutions</strong>, we provide
                   high-precision and optimized{" "}
-                  <strong>Mechanical Product Design</strong>
+                  <strong>Mechanical Product Design </strong>
                   solutions that ensure functionality, accuracy, and
                   manufacturability.
                 </p>
@@ -312,21 +312,46 @@ export default function ServicesLayout({ children }) {
           </div>
         </div>
 
-        {/* ========================= APPLICATIONS ========================= */}
+
+
         <div id="applications" ref={applicationsRef} className="mt-20 pt-4">
           <h2 className="text-3xl font-semibold tracking-wide border-b pb-3 mb-6">
             Applications
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
-              "Jigs & Fixtures",
-              "Special purpose machine",
-              "Dies & Molds",
-              "M/c installation structure",
-              "Fine blanking tool",
-              "Inspection gauges",
-              "Material handling equipment",
-              "Press tool",
+              {
+                name: "Jigs & Fixtures",
+                description: "Designing jigs, fixtures, tools, dies, molds, gauges, SPMs, material-handling systems, and installation structures."
+              },
+              {
+                name: "Special purpose machine",
+                description: "Custom-built machines designed for fast, precise, and high-efficiency operations."
+              },
+              {
+                name: "Dies & Molds",
+                description: "Precision tools used to shape materials into accurate, consistent, and repeatable products."
+              },
+              {
+                name: "M/c installation structure",
+                description: "Structures designed for safe, stable, and efficient machine installation."
+              },
+              {
+                name: "Fine blanking tool",
+                description: "High-precision tooling used to produce clean, accurate, and burr-free metal parts."
+              },
+              {
+                name: "Inspection gauges",
+                description: "Tools designed to measure and verify component accuracy with high precision."
+              },
+              {
+                name: "Material handling equipment",
+                description: "Equipment engineered to move, lift, and handle materials safely and efficiently"
+              },
+              {
+                name: "Press tool",
+                description: "Tooling used to cut or form sheet metal into precise shapes with high repeatability."
+              },
             ].map((item, index) => (
               <div
                 key={index}
@@ -335,23 +360,23 @@ export default function ServicesLayout({ children }) {
                 <div className="relative h-44 w-full">
                   <img
                     src={`/images/${index + 1}.jpg`}
-                    alt={item}
-                    className="h-full w-full object-fill transition duration-300 group-hover:blur-sm group-hover:brightness-75"
+                    alt={item.name}
+                    className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center text-white font-semibold text-[16px] opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none">
-                    {item}
+                  <div className="absolute inset-0 flex items-center justify-center px-4 text-white bg-black text-[18px] font-medium  text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none fw-[800px]">
+                    {item.description}
                   </div>
                 </div>
                 <div className="bg-blue-900 text-white text-center py-2 text-sm font-medium">
-                  {item}
+                  {item.name}
                 </div>
               </div>
             ))}
+
+            {/* CHILDREN */}
+            <div className="mt-10">{children}</div>
           </div>
         </div>
-
-        {/* CHILDREN */}
-        <div className="mt-10">{children}</div>
       </div>
     </div>
   );

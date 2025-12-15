@@ -13,7 +13,7 @@ export default function AboutVision() {
             borderColor: "border-blue-500",
             bgImage: Vision,
             icon: <FaEye className="w-8 h-8" />,
-            text: "To be a trusted partner in engineering design and digital-to-physical transformation. We turn ideas into functional, market-ready products using precision, technology, and innovation.",
+            text: "To shape the future of engineering by turning bold ideas into intelligent, high-precision solutions that perform, endure, and inspire.",
         },
         {
             title: "Mission",
@@ -22,7 +22,7 @@ export default function AboutVision() {
             bgImage: Mission,
             icon: (
                 <img
-                    src="/targeting.png"   // notice the leading slash
+                    src="/targeting.png"   
                     alt="Mission"
                     className="w-8 h-8 object-contain"
                 />
@@ -43,7 +43,7 @@ export default function AboutVision() {
         <section className="w-full px-6 md:px-12 lg:px-24 py-10  bg-white">
             <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-gray-900 ">Vision and Mission</h2>
-                <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+                <p className="mt-4 text-gray-500 max-w-2xl mx-auto text-[18px]">
                     We envision becoming a trusted manufacturing partner by delivering high-quality, efficient, and scalable mechanical solutions. Our mission is to produce precision-engineered components and systems that meet global standards and exceed industry expectations.  </p>
 
             </div>
@@ -61,10 +61,10 @@ export default function AboutVision() {
                         </div>
 
                         {/* Content */}
-                        <h3 className={`mt-12 text-xl font-semibold ${sec.color} text-center`}>
+                        <h3 className={`mt-8 text-xl font-semibold ${sec.color} text-center `}>
                             {sec.title}
                         </h3>
-                        <p className="mt-4 text-gray-600 text-center">{sec.text}</p>
+                        <p className="mt-4 text-gray-600 text-center text-[18px]">{sec.text}</p>
                     </div>
                 ))}
             </div>

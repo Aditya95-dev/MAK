@@ -55,7 +55,7 @@ export default function AboutHero() {
           <div key={index} className="w-full flex-shrink-0 h-full relative">
             <img
               src={slide.img}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-content"
               alt={`Slide ${index + 1}`}
             />
           </div>
