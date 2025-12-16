@@ -31,7 +31,7 @@ export default function AboutCombined() {
         <div className="relative w-full aspect-square max-w-md mx-auto">
           {/* Center Circle */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                        w-24 h-24 rounded-full bg-gradient-to-br from-[#062a66] to-[#0a4299]
+                        w-24 h-24 rounded-full bg-gradient-to-br from-[#6ca3de] to-[#0a4299]
                         flex items-center justify-center shadow-lg z-10">
             <span className="text-white font-bold text-sm text-center">Core<br />Values</span>
           </div>
@@ -52,7 +52,7 @@ export default function AboutCombined() {
                          shadow-[0_4px_20px_rgba(0,0,0,0.1)]
                          border-2 border-[#062a66]/20
                          hover:shadow-[0_8px_30px_rgba(6,42,102,0.3)]
-                         hover:scale-110 hover:border-[#062a66]
+                         hover:scale-110 hover:border-[#6ca3de]
                          transition-all duration-300 ease-out
                          group"
                 style={{
@@ -72,13 +72,24 @@ export default function AboutCombined() {
             <circle
               cx="50%"
               cy="50%"
-              r="140"
+              // r="140"
               fill="none"
               stroke="#062a66"
               strokeWidth="1"
               strokeDasharray="4 4"
             />
           </svg>
+          {/* <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
+            <circle
+              cx="50%"
+              cy="50%"
+              // r="112"
+              fill="none"
+              stroke="#062a66"
+              strokeWidth="1"
+              strokeDasharray="4 4"
+            />
+          </svg> */}
         </div>
       </div>
 

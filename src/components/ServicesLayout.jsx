@@ -71,24 +71,37 @@ export default function ServicesLayout({ children }) {
   return (
     <div className="w-full flex pt-10 pb-20 px-6 md:px-12 gap-10 bg-gray-100">
       {/* LEFT SIDEBAR */}
-      <div className="w-64 bg-white p-6 rounded-2xl shadow-md border sticky top-24 self-start h-fit max-h-[calc(100vh-7rem)] overflow-y-auto">
-        <h3 className="text-lg font-semibold mb-4 text-gray-800">
+      <div className="w-64 bg-white p-6 rounded-2xl shadow-md border sticky top-24 self-start h-fit max-h-auto  overflow-y-auto">
+        <h3 className="text-[22px] text-center font-semibold mb-4 text-gray-800">
           Our Services
         </h3>
-        <div className="space-y-2">
+        <div className="space-y-4">
           {services.map((s, i) => {
             const isActive = location.pathname === s.path;
             return (
               <Link
                 key={i}
                 to={s.path}
-                className={`flex items-center gap-2 px-4 py-3 rounded-lg transition border
+                className={`flex items-center gap-2 px-4 py-3 rounded-lg transition border 
                   ${isActive
                     ? "bg-blue-900 text-white border-blue-900 shadow"
                     : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
                   }`}
               >
-                <span className="text-sm font-medium">{s.name}</span>
+                <span className="text-[16px] font-medium whitespace-normal leading-snug">
+                  {s.name === "Manufacturing/Prototyping"
+                    ? (
+                      <>
+                        Manufacturing/
+                        <wbr />
+                        Prototyping
+                      </>
+                    )
+                    : s.name}
+                </span>
+
+
+
               </Link>
             );
           })}
@@ -98,7 +111,7 @@ export default function ServicesLayout({ children }) {
       {/* RIGHT CONTENT */}
       <div className="flex-1">
         {/* TOP TABS */}
-        <div className="flex gap-4 mb-8 border-b pb-3 sticky top-[125px] bg-white z-50 pt-4 -mx-6 px-6 shadow-sm w-[50%]">
+        <div className="flex gap-4 mb-8  pb-3 sticky top-[125px] z-50 pt-4 -mx-6 px-6  w-[50%]">
           {tabs.map((t) => (
             <button
               key={t.id}
@@ -137,7 +150,7 @@ export default function ServicesLayout({ children }) {
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm border">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-l-4 border-blue-900 ">
                 <h3 className="font-semibold text-[22px] mb-3">
                   Our Design Approach
                 </h3>
@@ -153,7 +166,7 @@ export default function ServicesLayout({ children }) {
                 </ul>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm border">
+              <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 ">
                 <h3 className="font-semibold text-lg mb-3 text-[22px]">
                   Areas of Competency
                 </h3>
@@ -185,7 +198,7 @@ export default function ServicesLayout({ children }) {
           </div>
 
           {/* KEY BENEFITS */}
-          <div className="mt-10">
+          <div className="mt-10 bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900">
             <h2 className="text-2xl font-bold mb-4 text-gray-900">
               Key Benefits
             </h2>
@@ -212,34 +225,35 @@ export default function ServicesLayout({ children }) {
           <h2 className="text-3xl font-semibold tracking-wide border-b pb-3 mb-6">
             Process Flow
           </h2>
-          <div className="overflow-hidden rounded-xl shadow-lg border border-gray-200">
+
+          <div className="overflow-hidden rounded-xl shadow-lg border border-gray-300">
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-blue-900 text-white text-sm font-semibold">
+                <tr className="bg-[#1e3a8a] text-white text-sm font-semibold">
                   <th
-                    className="border px-4 py-3 align-middle text-center text-lg"
+                    className="border-r border-gray-400 px-4 py-3 align-middle text-center text-lg"
                     rowSpan={2}
                   >
                     Process Flow
                   </th>
                   <th
-                    className="border px-4 py-3 text-center align-middle text-lg"
+                    className="border-r border-gray-400 px-4 py-3 text-center align-middle text-lg"
                     rowSpan={2}
                   >
                     Project Activities
                   </th>
                   <th
-                    className="border px-4 py-3 text-center text-lg"
+                    className="px-4 py-3 text-center text-lg"
                     colSpan={2}
                   >
                     Responsibility
                   </th>
                 </tr>
-                <tr className="bg-blue-900 text-white text-sm font-semibold">
-                  <th className="border px-4 py-2 text-center text-lg">
+                <tr className="bg-[#1e3a8a] text-white text-sm font-semibold">
+                  <th className="border-r border-gray-400 px-4 py-2 text-center text-lg">
                     Our Client
                   </th>
-                  <th className="border px-4 py-2 text-center text-lg">MAK</th>
+                  <th className="px-4 py-2 text-center text-lg">MAK</th>
                 </tr>
               </thead>
               <tbody className="text-gray-700">
@@ -294,12 +308,15 @@ export default function ServicesLayout({ children }) {
                 ].map((row, i) => (
                   <tr
                     key={i}
-                    className="odd:bg-white even:bg-gray-50 hover:bg-blue-50 transition text-lg"
+                    className="odd:bg-white even:bg-blue-50 hover:bg-blue-50 transition text-lg"
                   >
                     {row.map((cell, j) => (
-                      <td key={j} className="p-4 text-center">
+                      <td
+                        key={j}
+                        className={`p-4 ${j === 0 ? 'text-center' : j === 1 ? 'text-left' : 'text-center'} ${j < 3 ? 'border-r border-gray-300' : ''}`}
+                      >
                         {cell === "✓" ? (
-                          <img src={Check} className="w-5 h-5 mx-auto" />
+                          <img src={Check} alt="check" className="w-5 h-5 mx-auto" />
                         ) : (
                           cell
                         )}
@@ -310,6 +327,7 @@ export default function ServicesLayout({ children }) {
               </tbody>
             </table>
           </div>
+
         </div>
 
 
@@ -363,11 +381,11 @@ export default function ServicesLayout({ children }) {
                     alt={item.name}
                     className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center px-4 text-white bg-gray-600 text-[16px]   text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none ">
+                  <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px]   text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none ">
                     {item.description}
                   </div>
                 </div>
-                <div className="bg-blue-900 text-white text-center py-2 text-sm font-medium">
+                <div className="bg-blue-900 text-white text-center py-2 text-md font-medium">
                   {item.name}
                 </div>
               </div>
@@ -378,6 +396,6 @@ export default function ServicesLayout({ children }) {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
