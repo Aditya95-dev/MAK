@@ -542,7 +542,7 @@ export default function WhatMakesUsDifferent() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-black mb-3">
             What Makes Us Different
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto rounded-full"></div>
+          {/* <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto rounded-full"></div> */}
         </motion.div>
 
         {/* Timeline */}
@@ -609,7 +609,7 @@ export default function WhatMakesUsDifferent() {
                           viewport={{ once: true }}
                           className="flex items-start gap-3 group"
                         >
-                          <span className="mt-1.5 w-2 h-2 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                          <span className="mt-3 w-2 h-2 bg-gradient-to-br from-[#0a2f6b] to-[#0a2f6b] rounded-full flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                           <span className="leading-relaxed">{point}</span>
                         </motion.li>
                       ))}
