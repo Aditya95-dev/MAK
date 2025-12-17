@@ -113,7 +113,7 @@ export default function WhatMakesUsDifferent() {
                   <motion.div
                     whileHover={{ scale: 1.03, y: -5 }}
                     transition={{ duration: 0.3 }}
-                    className={`w-full sm:w-[45%] bg-slate-300 backdrop-blur-lg border-2 border-blue-100 rounded-2xl p-5 shadow-[0_8px_30px_rgba(14,165,233,0.15)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.25)] transition-all duration-300 ${isLeft ? "mr-auto" : "ml-auto"
+                    className={`w-full sm:w-[45%] bg-slate-800 text-white backdrop-blur-lg border-2 border-blue-100 rounded-2xl p-5 shadow-[0_8px_30px_rgba(14,165,233,0.15)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.25)] transition-all duration-300 ${isLeft ? "mr-auto" : "ml-auto"
                       }`}
                   >
                     {/* Header */}
