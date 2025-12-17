@@ -185,16 +185,20 @@ export default function ServicesLayout({ children }) {
             </div>
 
             {/* RIGHT IMAGE COLUMN */}
-            <div className="space-y-6">
+            <div className="space-y-40">
               <img
                 src="/PD11.webp"
-                className="rounded-xl shadow-md w-full object-cover"
+                alt="Product Design 1"
+                className="rounded-xl shadow-md w-full object-cover "
               />
               <img
                 src="/PD12.jpg"
+                alt="Product Design 2"
                 className="rounded-xl shadow-md w-full object-cover"
               />
             </div>
+
+
           </div>
 
           {/* KEY BENEFITS */}

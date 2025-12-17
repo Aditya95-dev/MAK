@@ -30,7 +30,7 @@ export default function AboutInfo() {
             Engineering Innovation With Purpose
           </h2>
 
-          <p className="text-lg leading-relaxed text-gray-700">
+          <p className="text-[18px] leading-relaxed text-gray-700">
             We believe every product has a story. Our aim is to transform ideas
             into functional, cost-effective, and market-ready solutions.
             Combining advanced tools with skilled engineers, designers, and 3D

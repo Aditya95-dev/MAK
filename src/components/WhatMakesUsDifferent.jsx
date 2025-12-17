@@ -551,7 +551,7 @@ export default function WhatMakesUsDifferent() {
           {/* Enhanced Vertical Line */}
           <div className="absolute left-1/2 top-0 h-full w-[3px] bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400 transform -translate-x-1/2 shadow-sm"></div>
 
-          <div className="space-y-3">
+          <div className="-space-y-20 md:-space-y-23">
             {data.map((item, i) => {
               const isLeft = i % 2 === 0;
               return (
@@ -592,14 +592,14 @@ export default function WhatMakesUsDifferent() {
                         <h3 className=" text-[22px] font-bold text-gray-900 mb-1">
                           {item.title}
                         </h3>
-                        <p className="text-[18px] text-blue-600 font-medium">
+                        <p className="text-[18px] text-[#497ab5] font-medium">
                           {item.desc}
                         </p>
                       </div>
                     </div>
 
                     {/* Points */}
-                    <ul className="space-y-2 text-sm text-gray-700">
+                    <ul className="space-y-2 text-[18px] text-gray-700">
                       {item.points.map((point, idx) => (
                         <motion.li
                           key={idx}
