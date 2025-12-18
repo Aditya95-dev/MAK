@@ -69,10 +69,10 @@ export default function ServicesLayout({ children }) {
   ];
 
   return (
-    <div className="w-full flex pt-10 pb-20 px-6 md:px-12 gap-10 bg-gray-100">
+    <div className="w-full flex pt-10 pb-4 px-6 md:px-12 gap-10 bg-gray-100">
       {/* LEFT SIDEBAR */}
       <div className="w-64 bg-white p-6 rounded-2xl shadow-md border sticky top-24 self-start h-fit max-h-auto  overflow-y-auto">
-        <h3 className="text-[22px] text-center font-semibold mb-4 text-gray-800">
+        <h3 className="text-[22px] text-left font-bold mb-4 text-gray-800">
           Our Services
         </h3>
         <div className="space-y-4">
@@ -111,7 +111,7 @@ export default function ServicesLayout({ children }) {
       {/* RIGHT CONTENT */}
       <div className="flex-1">
         {/* TOP TABS */}
-        <div className="flex gap-4 mb-8  pb-3 sticky top-[125px] z-50 pt-4 -mx-6 px-6  w-[50%]">
+        <div className="flex gap-4 mb-8  pb-3 text-[18px] sticky font-semibold top-[125px] z-50 pt-4 -mx-6 px-6  w-[50%]">
           {tabs.map((t) => (
             <button
               key={t.id}
@@ -129,7 +129,7 @@ export default function ServicesLayout({ children }) {
 
         {/* ========================= OVERVIEW ========================= */}
         <div id="overview" ref={overviewRef} className="space-y-12 pt-4">
-          <h2 className="text-3xl font-semibold tracking-wide border-b pb-3">
+          <h2 className="text-3xl font-bold tracking-wide border-b pb-3">
             Overview
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
@@ -151,7 +151,7 @@ export default function ServicesLayout({ children }) {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px] ">
-                <h3 className="font-semibold text-[22px] mb-3">
+                <h3 className="font-semibold text-[22px] mb-3 text-black">
                   Our Design Approach
                 </h3>
                 <ul className="list-disc pl-6 space-y-2 text-[18px]">
@@ -167,7 +167,7 @@ export default function ServicesLayout({ children }) {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 ">
-                <h3 className="font-semibold text-lg mb-3 text-[22px]">
+                <h3 className="font-semibold text-black mb-3 text-[22px]">
                   Areas of Competency
                 </h3>
                 <ul className="list-disc pl-6 space-y-1 text-[18px]">
@@ -180,6 +180,21 @@ export default function ServicesLayout({ children }) {
                   <li>Material Handling Equipment</li>
                   <li>Industrial Tools</li>
                   <li>Installation Structures (Aluminum/pipe)</li>
+                </ul>
+              </div>
+
+              {/*Key Benefits  */}
+              <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900">
+                <h3 className="text-[22px] font-semibold mb-3 text-gray-900">
+                  Key Benefits
+                </h3>
+                <ul className="list-disc pl-6 space-y-2 text-[18px]">
+                  <li>Faster time to market with fewer errors</li>
+                  <li>Cost saving by minimizing rework and material waste</li>
+                  <li>Improved design reliability through early validation</li>
+                  <li>Optimized performance for cost, quality, and efficiency</li>
+                  <li>Transparent communication at every stage</li>
+                  <li>Increased customer satisfaction</li>
                 </ul>
               </div>
             </div>
@@ -201,24 +216,12 @@ export default function ServicesLayout({ children }) {
 
           </div>
 
-          {/* KEY BENEFITS */}
-          <div className="mt-10 bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900">
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">
-              Key Benefits
-            </h2>
-            <ul className="list-disc pl-6 space-y-1 text-[18px]">
-              <li>Faster time to market with fewer errors.</li>
-              <li>Cost saving by minimizing rework and material waste.</li>
-              <li>Improved design reliability through early validation.</li>
-              <li>Optimized performance for cost, quality, and efficiency.</li>
-              <li>Transparent communication at every stage.</li>
-              <li>Increased customer satisfaction with better outcomes.</li>
-            </ul>
-          </div>
+          
+      
 
           {/* ========================= PROCESS FLOW ========================= */}
           <div id="process" ref={processRef} className="mt-20 pt-4">
-            <h2 className="text-3xl font-semibold tracking-wide border-b pb-3 mb-6">
+            <h2 className="text-3xl font-bold tracking-wide border-b pb-3 mb-6">
               Process Flow
             </h2>
 
@@ -239,7 +242,7 @@ export default function ServicesLayout({ children }) {
                       Project Activities
                     </th>
                     <th
-                      className="px-4 py-3 text-center text-lg"
+                      className="px-4 py-3 text-center text-lg border-b border-gray-400"
                       colSpan={2}
                     >
                       Responsibility
@@ -249,7 +252,7 @@ export default function ServicesLayout({ children }) {
                     <th className="border-r border-gray-400 px-4 py-2 text-center text-lg">
                       Our Client
                     </th>
-                    <th className="px-4 py-2 text-center text-lg">MAK</th>
+                    <th className="px-4 py-2 text-center text-lg">MAK Design</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-700">
@@ -329,7 +332,7 @@ export default function ServicesLayout({ children }) {
 
 
           <div id="applications" ref={applicationsRef} className="mt-20 pt-4">
-            <h2 className="text-3xl font-semibold tracking-wide border-b pb-3 mb-6">
+            <h2 className="text-3xl font-bold tracking-wide border-b pb-3 mb-6">
               Applications
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -388,11 +391,11 @@ export default function ServicesLayout({ children }) {
               ))}
 
               {/* CHILDREN */}
-              <div className="mt-10">{children}</div>
+              <div className="">{children}</div>
             </div>
           </div>
         </div>
       </div >
-      </div>
-      );
+    </div>
+  );
 }

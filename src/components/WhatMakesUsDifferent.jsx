@@ -113,30 +113,23 @@ export default function WhatMakesUsDifferent() {
                   <motion.div
                     whileHover={{ scale: 1.03, y: -5 }}
                     transition={{ duration: 0.3 }}
-                    className={`w-full sm:w-[45%] bg-slate-800 text-white backdrop-blur-lg border-2 border-blue-100 rounded-2xl p-5 shadow-[0_8px_30px_rgba(14,165,233,0.15)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.25)] transition-all duration-300 ${isLeft ? "mr-auto" : "ml-auto"
+                    className={`w-full sm:w-[45%] bg-[#27314b] backdrop-blur-lg border-2 border-blue-100 rounded-2xl p-5 shadow-[0_8px_30px_rgba(14,165,233,0.15)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.25)] transition-all duration-300 ${isLeft ? "mr-auto" : "ml-auto"
                       }`}
                   >
                     {/* Header */}
                     <div className="flex items-start gap-3 mb-3">
-                      {/* <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg flex-shrink-0">
-                        <img
-                          src={item.img}
-                          alt={item.title}
-                          className="w-6 h-6 brightness-0 invert"
-                        />
-                      </div> */}
                       <div className="flex-1">
-                        <h3 className=" text-[22px] font-bold text-gray-900 mb-1">
+                        <h3 className=" text-[22px] font-bold text-white mb-1">
                           {item.title}
                         </h3>
-                        <p className="text-[18px] text-[#497ab5] font-medium">
+                        <p className="text-[18px] text-[#679dd8] font-medium">
                           {item.desc}
                         </p>
                       </div>
                     </div>
 
                     {/* Points */}
-                    <ul className="space-y-2 text-[18px] text-gray-700">
+                    <ul className="space-y-2 text-[18px] text-white">
                       {item.points.map((point, idx) => (
                         <motion.li
                           key={idx}
@@ -146,7 +139,7 @@ export default function WhatMakesUsDifferent() {
                           viewport={{ once: true }}
                           className="flex items-start gap-3 group"
                         >
-                          <span className="mt-3 w-2 h-2 bg-gradient-to-br from-[#0a2f6b] to-[#0a2f6b] rounded-full flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                          <span className="mt-3 w-2 h-2 bg-gradient-to-br from-whitw to-white rounded-full flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                           <span className="leading-relaxed">{point}</span>
                         </motion.li>
                       ))}
