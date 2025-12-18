@@ -56,16 +56,16 @@ export default function ServicesLayout({ children }) {
     { name: "Reverse Engineering", path: "/services/reverse-engineering" },
     {
       name: "3D scanning & Product Benchmarking",
-      path: "/services/3d-scanning",
+      path: "/services/3d-scanning-benchmarking",
     },
-    { name: "CAD data conversion", path: "/services/cad-conversion" },
+    { name: "CAD data conversion", path: "/services/cad-data-conversion" },
     { name: "Finite Element Analysis (FEA)", path: "/services/fea" },
     {
       name: "3D Printing/Rapid prototyping",
-      path: "/services/rapid-prototyping",
+      path: "/services/3d-printing-rapid-prototyping",
     },
-    { name: "Manufacturing/Prototyping", path: "/services/manufacturing" },
-    { name: "Product rendering", path: "/services/product-rendering" },
+    { name: "Manufacturing/Prototyping", path: "/services/manufacturing-prototyping" },
+    { name: "Product rendering", path: "/services/product-rendering-technical-animation" },
   ];
 
   return (
@@ -216,8 +216,8 @@ export default function ServicesLayout({ children }) {
 
           </div>
 
-          
-      
+
+
 
           {/* ========================= PROCESS FLOW ========================= */}
           <div id="process" ref={processRef} className="mt-20 pt-4">

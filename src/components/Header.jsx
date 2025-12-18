@@ -23,7 +23,7 @@ export default function NavbarCyan() {
   }, []);
 
   const services = [
-    { name: "Product Design & DVA", path: "/services/product-design-dva" },
+    { name: "Mechanical Product Design", path: "/services/product-design-dva" },
     { name: "Reverse Engineering", path: "/services/reverse-engineering" },
     { name: "3D scanning & Product Benchmarking", path: "/services/3d-scanning-benchmarking" },
     { name: "CAD data conversion", path: "/services/cad-data-conversion" },
