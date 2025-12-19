@@ -129,7 +129,7 @@ export default function ServicesLayout({ children }) {
 
         {/* ========================= OVERVIEW ========================= */}
         <div id="overview" ref={overviewRef} className="space-y-12 pt-4">
-          <h2 className="text-3xl font-bold tracking-wide border-b pb-3">
+          <h2 className="text-3xl text-[#1e3a8a] font-bold tracking-wide border-b pb-3">
             Overview
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
@@ -221,7 +221,7 @@ export default function ServicesLayout({ children }) {
 
           {/* ========================= PROCESS FLOW ========================= */}
           <div id="process" ref={processRef} className="mt-20 pt-4">
-            <h2 className="text-3xl font-bold tracking-wide border-b pb-3 mb-6">
+            <h2 className="text-3xl font-bold text-[#1e3a8a] tracking-wide border-b pb-3 mb-6">
               Process Flow
             </h2>
 
@@ -332,7 +332,7 @@ export default function ServicesLayout({ children }) {
 
 
           <div id="applications" ref={applicationsRef} className="mt-20 pt-4">
-            <h2 className="text-3xl font-bold tracking-wide border-b pb-3 mb-6">
+            <h2 className="text-3xl font-bold text-[#1e3a8a] tracking-wide border-b pb-3 mb-6">
               Applications
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
