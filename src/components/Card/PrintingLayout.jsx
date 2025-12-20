@@ -345,7 +345,10 @@ export default function PrintingLayout({ children }) {
                     </div>
 
                     {/* Application */}
-                    <div>
+                    <div
+                        id="applications"
+                        ref={applicationsRef}
+                    >
                         <h1 className="text-3xl text-blue-900 font-bold tracking-wide border-b pb-3">Application</h1>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -384,7 +387,7 @@ export default function PrintingLayout({ children }) {
                                         alt={item.name}
                                         className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                                     />
-                                    <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
+                                    <div className="absolute inset-0 flex items-center justify-center px-4 text-black  bg-[#68aad3] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
                                         {item.description}
                                     </div>
                                 </div>
@@ -425,7 +428,7 @@ export default function PrintingLayout({ children }) {
                                             alt={item.name}
                                             className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                                         />
-                                        <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
+                                        <div className="absolute inset-0 flex items-center justify-center px-4 text-black  bg-[#68aad3] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
                                             {item.description}
                                         </div>
                                     </div>
