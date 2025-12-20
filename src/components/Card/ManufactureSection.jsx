@@ -5,12 +5,10 @@ export default function ManufactureSection({ children }) {
     const location = useLocation();
 
     const overviewRef = useRef(null);
-    const processRef = useRef(null);
     const applicationsRef = useRef(null);
 
     const tabs = [
         { id: "overview", label: "Overview", ref: overviewRef },
-        { id: "process", label: "Process Flow", ref: processRef },
         { id: "applications", label: "Applications", ref: applicationsRef },
     ];
 
@@ -18,25 +16,23 @@ export default function ManufactureSection({ children }) {
 
     const scrollToSection = (ref, id) => {
         if (ref.current) {
-            const yOffset = -100;
+            const yOffset = -110;
             const y =
                 ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({ top: y, behavior: "smooth" });
-            setActiveTab(id); // update on click
+            setActiveTab(id);
         }
     };
 
-    // Scroll spy
     useEffect(() => {
         const handleScroll = () => {
-            const scrollPos = window.scrollY + 150; // offset for sticky header
+            const scrollPos = window.scrollY + 160;
 
             const currentTab = tabs
-                .map((tab) => {
-                    const elem = tab.ref.current;
-                    if (!elem) return { id: tab.id, top: 0 };
-                    return { id: tab.id, top: elem.offsetTop };
-                })
+                .map((tab) => ({
+                    id: tab.id,
+                    top: tab.ref.current?.offsetTop || 0,
+                }))
                 .filter((sec) => sec.top <= scrollPos)
                 .sort((a, b) => b.top - a.top)[0];
 
@@ -46,84 +42,50 @@ export default function ManufactureSection({ children }) {
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
-        handleScroll(); // initialize
+        handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [activeTab, tabs]);
-
-    // const services = [
-    //     { name: "Mechanical Product design", path: "/services/product-design-dva" },
-    //     { name: "Reverse Engineering", path: "/services/reverse-engineering" },
-    //     {
-    //         name: "3D scanning & Product Benchmarking",
-    //         path: "/services/sanning-benchmarking",
-    //     },
-    //     { name: "CAD data conversion", path: "/services/cad-conversion" },
-    //     { name: "Finite Element Analysis (FEA)", path: "/services/fea" },
-    //     {
-    //         name: "3D Printing/Rapid prototyping",
-    //         path: "/services/rapid-prototyping",
-    //     },
-    //     {
-    //         name: "Manufacturing/Prototyping",
-    //         path: "/services/manufacturing-prototyping",
-    //     },
-    //     { name: "Product rendering", path: "/services/product-rendering" },
-    // ];
-
+    }, [activeTab]);
 
     const services = [
         { name: "Mechanical Product design", path: "/services/product-design-dva" },
         { name: "Reverse Engineering", path: "/services/reverse-engineering" },
-        {
-            name: "3D scanning & Product Benchmarking",
-            path: "/services/3d-scanning-benchmarking",
-        },
+        { name: "3D scanning & Product Benchmarking", path: "/services/3d-scanning-benchmarking" },
         { name: "CAD data conversion", path: "/services/cad-data-conversion" },
         { name: "Finite Element Analysis (FEA)", path: "/services/fea" },
-        {
-            name: "3D Printing/Rapid prototyping",
-            path: "/services/3d-printing-rapid-prototyping",
-        },
+        { name: "3D Printing/Rapid prototyping", path: "/services/3d-printing-rapid-prototyping" },
         { name: "Manufacturing/Prototyping", path: "/services/manufacturing-prototyping" },
         { name: "Product rendering", path: "/services/product-rendering-technical-animation" },
     ];
+
     return (
         <>
+            {/* HERO */}
             <section>
-
-                <img src="/3.jpg" alt="Hero" />
-
+                <img src="/3.jpg" alt="Hero" className="w-full h-[360px] object-cover" />
             </section>
-            <div className="w-full flex pt-10 pb-4 px-6 md:px-12 gap-10 bg-gray-100">
+
+            <div className="w-full flex pt-10 pb-6 px-6 md:px-12 gap-10 bg-gray-100">
+
                 {/* LEFT SIDEBAR */}
-                <div className="w-64 bg-white p-6 rounded-2xl shadow-md border sticky top-24 self-start h-fit max-h-auto  overflow-y-auto">
-                    <h3 className="text-[22px] text-left font-bold mb-4 text-gray-800">
+                <div className="w-64 bg-white p-6 rounded-2xl shadow-md border sticky top-24 self-start">
+                    <h3 className="text-[22px] font-bold mb-5 text-gray-800">
                         Our Services
                     </h3>
-                    <div className="space-y-4">
+
+                    <div className="space-y-3">
                         {services.map((s, i) => {
                             const isActive = location.pathname === s.path;
                             return (
                                 <Link
                                     key={i}
                                     to={s.path}
-                                    className={`flex items-center gap-2 px-4 py-3 rounded-lg transition border 
-                  ${isActive
+                                    className={`block px-4 py-3 rounded-lg transition border text-[15px] font-medium
+                                    ${isActive
                                             ? "bg-blue-900 text-white border-blue-900 shadow"
                                             : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
                                         }`}
                                 >
-                                    <span className="text-[16px] font-medium whitespace-normal leading-snug">
-                                        {s.name === "Manufacturing/Prototyping" ? (
-                                            <>
-                                                Manufacturing/
-                                                <wbr />
-                                                Prototyping
-                                            </>
-                                        ) : (
-                                            s.name
-                                        )}
-                                    </span>
+                                    {s.name}
                                 </Link>
                             );
                         })}
@@ -132,14 +94,15 @@ export default function ManufactureSection({ children }) {
 
                 {/* RIGHT CONTENT */}
                 <div className="flex-1">
+
                     {/* TOP TABS */}
-                    <div className="flex gap-4 mb-8  pb-3 text-[18px] sticky font-semibold top-[125px] z-50 pt-4 -mx-6 px-6  w-[50%]">
+                    <div className="flex gap-4 mb-10 sticky top-[120px] z-50 bg-gray-100 py-3 w-fit rounded-lg">
                         {tabs.map((t) => (
                             <button
                                 key={t.id}
-                                onClick={() => scrollToSection(t.ref)}
-                                className={`px-5 py-2 rounded-md transition-all duration-300 font-medium 
-        ${activeTab === t.id
+                                onClick={() => scrollToSection(t.ref, t.id)}
+                                className={`px-6 py-2 rounded-md transition font-medium
+                                ${activeTab === t.id
                                         ? "bg-blue-900 text-white"
                                         : "bg-white text-blue-900 hover:bg-blue-100"
                                     }`}
@@ -149,132 +112,159 @@ export default function ManufactureSection({ children }) {
                         ))}
                     </div>
 
-                    {/* ========================= OVERVIEW ========================= */}
-                    <div id="overview" ref={overviewRef} className="space-y-12 pt-4">
-                        <h2 className="text-3xl font-bold tracking-wide border-b pb-3">
+                    {/* ================= OVERVIEW ================= */}
+                    <div ref={overviewRef} className="space-y-12">
+
+                        <h2 className="text-3xl text-blue-900 font-bold border-b pb-3">
                             Overview
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
                             {/* LEFT CONTENT */}
-                            <div className="space-y-8 text-[15px] leading-relaxed text-gray-700">
-                                <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px]">
+                            <div className="space-y-10">
+
+                                {/* Overview Card */}
+                                <div className="bg-white p-8 border-l-4 border-blue-900 rounded-2xl shadow-md  text-[16px] leading-relaxed text-gray-700">
                                     <p>
-                                        At <strong>MAK Design Solutions</strong>, we help businesses
-                                        bridge the gap between digital design and physical reality
-                                        through our manufacturing and prototyping services. By
-                                        developing physical models using various manufacturing
-                                        processes, we enable clients to test ideas, gather feedback,
-                                        and refine designs before committing to full-scale development
-                                        or mass production. This approach ensures that products are
-                                        validated at the earliest stage, saving both time and cost
-                                        while delivering more reliable outcomes.
+                                        At <strong>MAK Design Solutions</strong>, we bridge the gap
+                                        between digital design and physical reality through
+                                        <strong> manufacturing and prototyping</strong>.
+                                        Early validation reduces risk, saves cost, and ensures
+                                        reliable, production-ready solutions.
                                     </p>
                                 </div>
 
-                                {/*Key Benefits  */}
-                                <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900">
-                                    <h3 className="text-[22px] font-semibold mb-3 text-gray-900">
+                                {/* KEY BENEFITS */}
+                                <div className="bg-white p-8 rounded-2xl shadow-md border-l-4 border-blue-900">
+                                    <h3 className="text-[22px] font-semibold mb-6 text-blue-900">
                                         Key Benefits
                                     </h3>
-                                    <ul className="list-disc pl-6 space-y-2 text-[18px]">
-                                        <li>
-                                            Early Flaw Detection – Identify and fix design issues at the
-                                            initial stage, preventing costly mistakes later.{" "}
+
+                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5 text-[16px] leading-relaxed text-gray-700">
+                                        <li className="flex items-start gap-3">
+                                            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-900"></span>
+                                            <span>
+                                                <strong>Early Flaw Detection –</strong> Identify and fix design issues at
+                                                the initial stage, preventing costly mistakes later.
+                                            </span>
                                         </li>
-                                        <li>
-                                            Improved Efficiency – Rapid design iterations accelerate the
-                                            development process and reduce time-to-market.
+
+                                        <li className="flex items-start gap-3">
+                                            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-900"></span>
+                                            <span>
+                                                <strong>Improved Efficiency –</strong> Rapid design iterations accelerate
+                                                the development process and reduce time-to-market.
+                                            </span>
                                         </li>
-                                        <li>
-                                            Validation – Safely test design feasibility and explore
-                                            multiple concepts without heavy investment.{" "}
+
+                                        <li className="flex items-start gap-3">
+                                            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-900"></span>
+                                            <span>
+                                                <strong>Validation –</strong> Safely test design feasibility and explore
+                                                multiple concepts without heavy investment.
+                                            </span>
                                         </li>
-                                        <li>
-                                            Tangible Experience – Provide stakeholders with a real-world
-                                            feel of the product for better decision-making.
+
+                                        <li className="flex items-start gap-3">
+                                            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-900"></span>
+                                            <span>
+                                                <strong>Tangible Experience –</strong> Provide stakeholders with a
+                                                real-world feel of the product for better decision-making.
+                                            </span>
                                         </li>
-                                        <li>
-                                            Feedback-Driven Refinement – Direct and immediate feedback
-                                            helps align the product with customer expectations.
+
+                                        <li className="flex items-start gap-3">
+                                            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-900"></span>
+                                            <span>
+                                                <strong>Feedback-Driven Refinement –</strong> Direct and immediate feedback
+                                                helps align the product with customer expectations.
+                                            </span>
                                         </li>
-                                        <li>
-                                            Stakeholder Buy-In – Tangible prototypes create stronger
-                                            confidence and support for project success.
+
+                                        <li className="flex items-start gap-3">
+                                            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-900"></span>
+                                            <span>
+                                                <strong>Stakeholder Buy-In –</strong> Tangible prototypes create stronger
+                                                confidence and support for project success.
+                                            </span>
                                         </li>
-                                        <li>
-                                            Iterative Development – Quickly test and refine multiple
-                                            versions for the most user-centric outcome.
+
+                                        <li className="flex items-start gap-3">
+                                            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-900"></span>
+                                            <span>
+                                                <strong>Iterative Development –</strong> Quickly test and refine multiple
+                                                versions for the most user-centric outcome.
+                                            </span>
                                         </li>
-                                        <li>
-                                            Functionality Testing – Prototypes validate ergonomics,
-                                            usability, and performance in real-world conditions.
+
+                                        <li className="flex items-start gap-3">
+                                            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-900"></span>
+                                            <span>
+                                                <strong>Functionality Testing –</strong> Prototypes validate ergonomics,
+                                                usability, and performance in real-world conditions.
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
+
                             </div>
 
-                            {/* RIGHT IMAGE COLUMN */}
-                            <div className="space-y-48">
+                            {/* RIGHT IMAGES */}
+                            <div className="space-y-10 sticky top-36">
                                 <img
-                                    src="/manufact1.jpg"
-                                    alt="Product Design 1"
-                                    className="rounded-xl shadow-md w-full object-cover "
+                                    src="/images/MANF1.jpg"
+                                    className="rounded-xl shadow-md w-full object-cover"
+                                    alt=""
                                 />
                                 <img
-                                    src="/manufact2.jpg"
-                                    alt="Product Design 2"
+                                    src="/images/MANF2.jpg"
                                     className="rounded-xl shadow-md w-full object-cover"
+                                    alt=""
                                 />
                             </div>
                         </div>
 
-                        {/* ========================= PROCESS FLOW ========================= */}
+                        {/* ================= APPLICATIONS ================= */}
+                        <div ref={applicationsRef} className="mt-24">
 
-                        <div id="applications" ref={applicationsRef} className="mt-20 pt-4">
-                            <h2 className="text-3xl font-bold tracking-wide border-b pb-3 mb-6">
+                            <h2 className="text-3xl text-blue-900 font-bold border-b pb-3 mb-8">
                                 Applications
                             </h2>
+
                             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                                 {[
                                     {
                                         name: "Jigs & Fixtures",
-                                        description:
-                                            "Designing jigs, fixtures, tools, dies, molds, gauges, SPMs, material-handling systems, and installation structures.",
+                                        description: "Designing jigs, fixtures, tools, dies, molds, gauges, SPMs, material-handling systems, and installation structures."
                                     },
                                     {
                                         name: "Special purpose machine",
-                                        description:
-                                            "Custom-built machines designed for fast, precise, and high-efficiency operations.",
+                                        description: "Custom-built machines designed for fast, precise, and high-efficiency operations."
                                     },
                                     {
                                         name: "Dies & Molds",
-                                        description:
-                                            "Precision tools used to shape materials into accurate, consistent, and repeatable products.",
+                                        description: "Precision tools used to shape materials into accurate, consistent, and repeatable products."
                                     },
                                     {
                                         name: "M/c installation structure",
-                                        description:
-                                            "Structures designed for safe, stable, and efficient machine installation.",
+                                        description: "Structures designed for safe, stable, and efficient machine installation."
                                     },
                                     {
                                         name: "Fine blanking tool",
-                                        description:
-                                            "High-precision tooling used to produce clean, accurate, and burr-free metal parts.",
+                                        description: "High-precision tooling used to produce clean, accurate, and burr-free metal parts."
                                     },
                                     {
                                         name: "Inspection gauges",
-                                        description:
-                                            "Tools designed to measure and verify component accuracy with high precision.",
+                                        description: "Tools designed to measure and verify component accuracy with high precision."
                                     },
                                     {
                                         name: "Material handling equipment",
-                                        description:
-                                            "Equipment engineered to move, lift, and handle materials safely and efficiently",
+                                        description: "Equipment engineered to move, lift, and handle materials safely and efficiently"
                                     },
                                     {
                                         name: "Press tool",
-                                        description:
-                                            "Tooling used to cut or form sheet metal into precise shapes with high repeatability.",
+                                        description: "Tooling used to cut or form sheet metal into precise shapes with high repeatability."
                                     },
                                 ].map((item, index) => (
                                     <div
@@ -283,11 +273,11 @@ export default function ManufactureSection({ children }) {
                                     >
                                         <div className="relative h-44 w-full">
                                             <img
-                                                src={`/images/${index + 1}.jpg`}
+                                                src={`/images/Manifacturing/${index + 1}.jpg`}
                                                 alt={item.name}
                                                 className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                                             />
-                                            <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px]   text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none ">
+                                            <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#68aad3] text-[16px]   text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none ">
                                                 {item.description}
                                             </div>
                                         </div>

@@ -10,7 +10,7 @@ export default function FeaSection({ children }) {
 
     const tabs = [
         { id: "overview", label: "Overview", ref: overviewRef },
-        { id: "process", label: "Process Flow", ref: processRef },
+        // { id: "process", label: "Process Flow", ref: processRef },
         { id: "applications", label: "Applications", ref: applicationsRef },
     ];
 
@@ -22,7 +22,7 @@ export default function FeaSection({ children }) {
             const y =
                 ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({ top: y, behavior: "smooth" });
-            setActiveTab(id); // update on click
+            setActiveTab(id);
         }
     };
 
@@ -50,23 +50,6 @@ export default function FeaSection({ children }) {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [activeTab, tabs]);
 
-    // const services = [
-    //     { name: "Mechanical Product design", path: "/services/product-design-dva" },
-    //     { name: "Reverse Engineering", path: "/services/reverse-engineering" },
-    //     {
-    //         name: "3D scanning & Product Benchmarking",
-    //         path: "/services/sanning-benchmarking",
-    //     },
-    //     { name: "CAD data conversion", path: "/services/cad-conversion" },
-    //     { name: "Finite Element Analysis (FEA)", path: "/services/fea" },
-    //     {
-    //         name: "3D Printing/Rapid prototyping",
-    //         path: "/services/rapid-prototyping",
-    //     },
-    //     { name: "Manufacturing/Prototyping", path: "/services/manufacturing-prototyping" },
-    //     { name: "Product rendering", path: "/services/product-rendering" },
-    // ];
-
 
 
     const services = [
@@ -89,7 +72,7 @@ export default function FeaSection({ children }) {
         <div className="w-full flex pt-10 pb-4 px-6 md:px-12 gap-10 bg-gray-100">
             {/* LEFT SIDEBAR */}
             <div className="w-64 bg-white p-6 rounded-2xl shadow-md border sticky top-24 self-start h-fit max-h-auto  overflow-y-auto">
-                <h3 className="text-[22px] text-left font-bold mb-4 text-gray-800">
+                <h3 className="text-[22px]  text-left font-bold mb-4 text-gray-800">
                     Our Services
                 </h3>
                 <div className="space-y-4">
@@ -143,201 +126,181 @@ export default function FeaSection({ children }) {
 
                 {/* ========================= OVERVIEW ========================= */}
                 <div id="overview" ref={overviewRef} className="space-y-12 pt-4">
-                    <h2 className="text-3xl font-bold tracking-wide border-b pb-3">
+                    <h2 className="text-3xl text-[#1e3a8a] font-bold tracking-wide border-b pb-3">
                         Overview
                     </h2>
 
-                    {/* ================= TEXT CONTENT ================= */}
-                    <div className="space-y-8 text-[15px] leading-relaxed text-gray-700">
-                        <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px]">
-                            <p>
-                                <strong>Finite Element Analysis (FEA)</strong> is a powerful
-                                computer-based simulation technique that predicts how a product
-                                or structure will perform under real-world conditions such as
-                                stress, vibration, heat, and load. By breaking down a complex
-                                design into multiple interconnected finite elements, FEA
-                                provides highly accurate insights into structural
-                                behaviour—without the need of costly physical prototypes.
-                            </p>
+
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+                        {/* LEFT CONTENT */}
+                        <div className="space-y-8 text-[15px] leading-relaxed text-gray-700">
+                            <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px]">
+                                <p>
+                                    <strong>Finite Element Analysis (FEA)</strong> is a powerful
+                                    computer-based simulation technique that predicts how a product
+                                    or structure will perform under real-world conditions such as
+                                    stress, vibration, heat, and load. By breaking down a complex
+                                    design into multiple interconnected finite elements, FEA
+                                    provides highly accurate insights into structural
+                                    behaviour—without the need of costly physical prototypes.
+                                </p>
+                            </div>
+
+                            <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px] ">
+                                <h3 className="font-semibold text-[22px] mb-3 text-black">
+                                    At MAK Design Solutions, we leverage FEA to
+                                </h3>
+                                <ul className="list-disc pl-6 space-y-2 text-[18px]">
+                                    <li>Analyse complex systems and assemblies.</li>
+                                    <li>
+                                        Validate and test structural designs for performance and
+                                        durability.
+                                    </li>
+                                    <li>
+                                        Detect potential design flaws early in the development cycle.
+                                    </li>
+                                    <li>Optimize products for strength, safety, and efficiency.</li>
+                                </ul>
+                            </div>
+
+                            <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 ">
+                                <h3 className="font-semibold text-black mb-3 text-[22px]">
+                                    MAK Design Solutions provide the FEA solutions on
+                                </h3>
+                                <ul className="list-disc pl-6 space-y-1 text-[18px]">
+                                    <li>Static structure</li>
+                                    <li>Modal analysis</li>
+                                    <li>Explicit dynamics</li>
+                                    <li>Transient structure</li>
+                                    <li>Buckling</li>
+                                    <li>Steady state thermal</li>
+                                    <li>Transient thermal</li>
+
+                                </ul>
+                            </div>
+
                         </div>
 
-                        <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px]">
-                            <h3 className="font-semibold text-[22px] mb-3 text-black">
-                                At MAK Design Solutions, we leverage FEA to :
-                            </h3>
-                            <ul className="list-disc pl-6 space-y-2 text-[18px]">
-                                <li>Analyse complex systems and assemblies.</li>
-                                <li>
-                                    Validate and test structural designs for performance and
-                                    durability.
-                                </li>
-                                <li>
-                                    Detect potential design flaws early in the development cycle.
-                                </li>
-                                <li>Optimize products for strength, safety, and efficiency.</li>
-                            </ul>
+                        {/* RIGHT IMAGE COLUMN */}
+                        <div className="space-y-48">
+                            <img
+                                src="/images/FEA/FEA1.png"
+                                alt="Product Design 1"
+                                className="rounded-xl shadow-md w-full object-cover "
+                            />
+                            <img
+                                src="/images/FEA/FEA2.png"
+                                alt="Product Design 2"
+                                className="rounded-xl shadow-md w-full object-cover"
+                            />
                         </div>
 
-                        <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900">
-                            <h3 className="font-semibold text-black mb-3 text-[22px]">
-                                MAK Design Solutions provide the FEA solutions on :
-                            </h3>
-                            <ul className="list-disc pl-6 space-y-1 text-[18px]">
-                                <li>Static structure</li>
-                                <li>Modal analysis</li>
-                                <li>Explicit dynamics</li>
-                                <li>Transient structure</li>
-                                <li>Buckling</li>
-                                <li>Steady state thermal</li>
-                                <li>Transient thermal</li>
-                            </ul>
-                        </div>
 
-                        <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900">
-                            <h3 className="text-[22px] font-semibold mb-3 text-gray-900">
-                                Benefits of FEA in Product Development
-                            </h3>
-                            <ul className="list-disc pl-6 space-y-2 text-[18px]">
-                                <li>
-                                    <strong>Reduced Prototyping Costs –</strong> Saves time and
-                                    resources by minimizing physical trial-and-error.
-                                </li>
-                                <li>
-                                    <strong>Accurate & Detailed Results –</strong> Provides
-                                    precise insights into material stress, load distribution, and
-                                    potential weak points.
-                                </li>
-                                <li>
-                                    <strong>Cost & Time Efficiency –</strong> Speeds up design
-                                    cycles and accelerates time-to-market.
-                                </li>
-                                <li>
-                                    <strong>Risk Mitigation –</strong> Identifies potential
-                                    failures early, ensuring safer and more reliable designs.
-                                </li>
-                                <li>
-                                    <strong>Complex Geometry Handling –</strong> Capable of
-                                    analyzing intricate product designs.
-                                </li>
-                                <li>
-                                    <strong>Versatile Analysis –</strong> Supports both linear and
-                                    non-linear problem-solving.
-                                </li>
-                                <li>
-                                    <strong>Safe Testing –</strong> Simulates destructive
-                                    scenarios without risk.
-                                </li>
-                                <li>
-                                    <strong>Design Optimization –</strong> Improves performance
-                                    before mass production.
-                                </li>
-                            </ul>
-                        </div>
                     </div>
 
-                    {/* ================= IMAGES ================= */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        <img
-                            src="/fea1.jpg"
-                            alt="FEA Analysis 1"
-                            className="rounded-xl shadow-md w-full object-cover"
-                        />
-                        <img
-                            src="/fea2.png"
-                            alt="FEA Analysis 2"
-                            className="rounded-xl shadow-md w-full object-cover"
-                        />
-                    </div>
-                </div>
 
-                {/* ========================= APPLICATIONS ========================= */}
-                <div id="applications" ref={applicationsRef} className="mt-20 pt-4">
-                    <h2 className="text-3xl font-bold tracking-wide border-b pb-3 mb-6">
-                        Applications
-                    </h2>
+                 
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                        {/* ---------- FIRST ROW : 4 IMAGES ---------- */}
-                        {[
-                            {
-                                name: "Solve Engg. problems",
-                                description:
-                                    "Designing jigs, fixtures, tools, dies, molds, gauges, SPMs, material-handling systems, and installation structures.",
-                            },
-                            {
-                                name: "Structure analysis",
-                                description:
-                                    "Custom-built machines designed for fast, precise, and high-efficiency operations.",
-                            },
-                            {
-                                name: "Design Optimization",
-                                description:
-                                    "Precision tools used to shape materials into accurate, consistent, and repeatable products.",
-                            },
-                            {
-                                name: "Ensure safety & efficiency",
-                                description:
-                                    "Structures designed for safe, stable, and efficient machine installation.",
-                            },
-                        ].map((item, index) => (
-                            <div
-                                key={index}
-                                className="relative group rounded-md overflow-hidden shadow-sm bg-white hover:shadow-lg transition cursor-pointer"
-                            >
-                                <div className="relative h-44 w-full">
-                                    <img
-                                        src={`/images/${index + 1}.jpg`}
-                                        alt={item.name}
-                                        className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
-                                    />
-                                    <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
-                                        {item.description}
+                    <div className="bg-white p-9 rounded-2xl shadow-md  border-l-4 border-blue-900">
+                        <h3 className="text-[22px] font-semibold  mb-7">
+                            Benefits of FEA in Product Development
+                        </h3>
+
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {[
+                                ["Reduced Prototyping Costs", "Minimizes physical trial-and-error."],
+                                ["Accurate Results", "Detailed stress & load analysis."],
+                                ["Time Efficiency", "Faster design cycles."],
+                                ["Risk Mitigation", "Early failure detection."],
+                                ["Complex Geometry", "Handles intricate shapes."],
+                                ["Versatile Analysis", "Linear & non-linear simulations."],
+                                ["Safe Testing", "Risk-free simulations."],
+                                ["Optimization", "Improved design performance."],
+                            ].map(([title, desc], i) => (
+                                <div
+                                    key={i}
+                                    className="flex gap-5 p-5 rounded-xl bg-gray-50 border-l-4 border-blue-900 hover:-translate-y-1 hover:shadow-lg transition"
+                                >
+                                    <div className="h-10 w-10 flex items-center justify-center rounded-full bg-blue-900 text-white font-bold">
+                                        ✓
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-900">{title}</h4>
+                                        <p className="text-gray-600 text-sm mt-1">{desc}</p>
                                     </div>
                                 </div>
-                                <div className="bg-blue-900 text-white text-center py-2 text-md font-medium">
-                                    {item.name}
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+                    </div>
 
-                        {/* ---------- SECOND ROW : 2 IMAGES (CENTERED) ---------- */}
-                        <div className="col-span-full flex justify-center gap-6">
+
+
+
+                    {/* ========================= APPLICATIONS ========================= */}
+                    <div id="applications" ref={applicationsRef} className="mt-20 pt-4">
+                        <h2 className="text-3xl text-[#1e3a8a] font-bold tracking-wide border-b pb-3 mb-6">
+                            Applications
+                        </h2>
+
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-8">
                             {[
+                                {
+                                    name: "Solve Engg. problems",
+                                    description:
+                                        "",
+                                },
+                                {
+                                    name: "Structure analysis",
+                                    description:
+                                        "",
+                                },
+                                {
+                                    name: "Design Optimization",
+                                    description:
+                                        "",
+                                },
+                                {
+                                    name: "Ensure safety & efficiency",
+                                    description:
+                                        "",
+                                },
                                 {
                                     name: "Design validation",
                                     description:
-                                        "High-precision tooling used to produce clean, accurate, and burr-free metal parts.",
+                                        "",
                                 },
                                 {
                                     name: "Durability evaluation",
                                     description:
-                                        "Tools designed to measure and verify component accuracy with high precision.",
+                                        "",
                                 },
                             ].map((item, index) => (
                                 <div
                                     key={index}
-                                    className="relative group rounded-md overflow-hidden shadow-sm bg-white hover:shadow-lg transition cursor-pointer w-full max-w-[260px]"
+                                    className="relative group rounded-md overflow-hidden shadow-sm bg-white hover:shadow-lg transition cursor-pointer"
                                 >
                                     <div className="relative h-44 w-full">
                                         <img
-                                            src={`/images/${index + 5}.jpg`}
+                                            src={`/images/FEA/${index + 1}.jpg`}
                                             alt={item.name}
                                             className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                                         />
-                                        <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
+                                        <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#68aad3]  text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
                                             {item.description}
                                         </div>
                                     </div>
+
                                     <div className="bg-blue-900 text-white text-center py-2 text-md font-medium">
                                         {item.name}
                                     </div>
                                 </div>
                             ))}
-                        </div>
 
-                        {/* ---------- CHILDREN ---------- */}
-                        {children && <div className="col-span-full">{children}</div>}
+                            {children && <div className="col-span-full">{children}</div>}
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

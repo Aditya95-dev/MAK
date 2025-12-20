@@ -19,6 +19,9 @@ import ScanningSection from "./pages/Services/ScanningSection";
 import FEA from "./pages/Services/FEA";
 import ManufactureSection from "./components/Card/ManufactureSection";
 import ProductRendering from "./pages/Services/ProductRendering";
+import BlogCardTwo from "./components/Blog/BlogTwo";
+import BlogCardThree from "./components/Blog/BlogThree";
+import BlogCardFour from "./components/Blog/BlogFour";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -42,8 +45,13 @@ const App = () => {
         { path: "/services/fea", element: <FEA /> },
         { path: "/services/manufacturing-prototyping", element: <ManufactureSection /> },
         { path: "/services/product-rendering-technical-animation", element: <ProductRendering /> },
+       
+       
         { path: "/blog", element: <Blog /> },
         { path: "/blog/cardone", element: <BlogCardOne /> },
+        { path: "/blog/cardtwo", element: <BlogCardTwo /> },
+        { path: "/blog/cardthree", element: <BlogCardThree /> },
+        { path: "/blog/cardfour", element: <BlogCardFour /> },
         { path: "/menu", element: <Menu /> },
         { path: "/celebratewithus", element: <CelebrateWithUs /> },
         { path: "/gallery", element: <Gallery /> },

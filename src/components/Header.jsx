@@ -30,7 +30,7 @@ export default function NavbarCyan() {
     { name: "Finite Element Analysis (FEA)", path: "/services/fea" },
     { name: "3D Printing / Rapid prototyping", path: "/services/3d-printing-rapid-prototyping" },
     { name: "Manufacturing / Prototyping", path: "/services/manufacturing-prototyping" },
-    { name: "Product rendering & animation", path: "/services/product-rendering-technical-animation" },
+    { name: "Product rendering & Animation", path: "/services/product-rendering-technical-animation" },
   ];
 
   return (

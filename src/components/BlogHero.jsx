@@ -58,17 +58,18 @@ const BlogHero = () => {
                     {/* CARD 2 */}
                     <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex items-stretch h-28">
                         <img
-                            src="https://t3.ftcdn.net/jpg/07/50/76/16/360_F_750761616_bKxDS2fRcCOyg5Cc8QRYGOTIrppjismd.jpg"
+                            src="https://static.wixstatic.com/media/e2ca7f_cb493bb1342e4fb58fa1661d8e8f213a~mv2.jpg/v1/fill/w_568,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e2ca7f_cb493bb1342e4fb58fa1661d8e8f213a~mv2.jpg"
                             alt="Automation"
                             className="w-28 h-full object-cover flex-shrink-0"
                         />
 
                         <div className="p-3 flex flex-col justify-center">
                             <Link
-                                to="/blog/cardone"
+                                to="/blog/cardtwo"
                                 className="text-sm font-medium text-blue-900 hover:underline mb-1 block"
                             >
-                                How FEA Helps Engineers Detect Product Failures Early
+                                Why Product Rendering Is Essential for Marketing & E-Commerce
+
                             </Link>
                             <p className="text-gray-600 text-xs leading-snug">
                                 How robotics and smart automation are transforming global
@@ -80,17 +81,17 @@ const BlogHero = () => {
                     {/* CARD 3 */}
                     <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex items-stretch h-28">
                         <img
-                            src="https://t3.ftcdn.net/jpg/07/50/76/16/360_F_750761616_bKxDS2fRcCOyg5Cc8QRYGOTIrppjismd.jpg"
+                            src="https://www.proventia.com/wp-content/uploads/2024/09/Proventia_Brno_Hires-6430-scaled.jpg"
                             alt="Automation"
                             className="w-28 h-full object-cover flex-shrink-0"
                         />
 
                         <div className="p-3 flex flex-col justify-center">
                             <Link
-                                to="/blog/cardone"
+                                to="/blog/cardthree"
                                 className="text-sm font-medium text-blue-900 hover:underline mb-1 block"
                             >
-                                How FEA Helps Engineers Detect Product Failures Early
+                                Rapid Prototyping: Why It’s a Game Changer for Designers
                             </Link>
                             <p className="text-gray-600 text-xs leading-snug">
                                 How robotics and smart automation are transforming global
@@ -100,17 +101,19 @@ const BlogHero = () => {
                     </div>
                     <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex items-stretch h-28">
                         <img
-                            src="https://t3.ftcdn.net/jpg/07/50/76/16/360_F_750761616_bKxDS2fRcCOyg5Cc8QRYGOTIrppjismd.jpg"
+                            src="https://knowhow.distrelec.com/wp-content/uploads/2022/01/industrial-manufacturing.jpg"
                             alt="Automation"
                             className="w-28 h-full object-cover flex-shrink-0"
                         />
 
                         <div className="p-3 flex flex-col justify-center">
                             <Link
-                                to="/blog/cardone"
+                                to="/blog/cardfour"
                                 className="text-sm font-medium text-blue-900 hover:underline mb-1 block"
                             >
-                                How FEA Helps Engineers Detect Product Failures Early
+                                Manufacturing Trends That Are Changing the Industry
+
+
                             </Link>
                             <p className="text-gray-600 text-xs leading-snug">
                                 How robotics and smart automation are transforming global
@@ -119,49 +122,7 @@ const BlogHero = () => {
                         </div>
                     </div>
 
-                    {/* CARD 2 */}
-                    <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex items-stretch h-28">
-                        <img
-                            src="https://t3.ftcdn.net/jpg/07/50/76/16/360_F_750761616_bKxDS2fRcCOyg5Cc8QRYGOTIrppjismd.jpg"
-                            alt="Automation"
-                            className="w-28 h-full object-cover flex-shrink-0"
-                        />
 
-                        <div className="p-3 flex flex-col justify-center">
-                            <Link
-                                to="/blog/cardone"
-                                className="text-sm font-medium text-blue-900 hover:underline mb-1 block"
-                            >
-                                How FEA Helps Engineers Detect Product Failures Early
-                            </Link>
-                            <p className="text-gray-600 text-xs leading-snug">
-                                How robotics and smart automation are transforming global
-                                manufacturing ecosystems.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* CARD 3 */}
-                    <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex items-stretch h-28">
-                        <img
-                            src="https://t3.ftcdn.net/jpg/07/50/76/16/360_F_750761616_bKxDS2fRcCOyg5Cc8QRYGOTIrppjismd.jpg"
-                            alt="Automation"
-                            className="w-28 h-full object-cover flex-shrink-0"
-                        />
-
-                        <div className="p-3 flex flex-col justify-center">
-                            <Link
-                                to="/blog/cardone"
-                                className="text-sm font-medium text-blue-900 hover:underline mb-1 block"
-                            >
-                                How FEA Helps Engineers Detect Product Failures Early
-                            </Link>
-                            <p className="text-gray-600 text-xs leading-snug">
-                                How robotics and smart automation are transforming global
-                                manufacturing ecosystems.
-                            </p>
-                        </div>
-                    </div>
 
                     {/* Repeat the same structure for remaining cards */}
                 </div>

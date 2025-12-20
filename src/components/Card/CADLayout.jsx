@@ -51,22 +51,6 @@ const CADLayout = ({ children }) => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [activeTab, tabs]);
 
-    // const services = [
-    //     { name: "Mechanical Product design", path: "/services/product-design-dva" },
-    //     { name: "Reverse Engineering", path: "/services/reverse-engineering" },
-    //     {
-    //         name: "3D scanning & Product Benchmarking",
-    //         path: "/services/3d-scanning",
-    //     },
-    //     { name: "CAD data conversion", path: "/services/cad-conversion" },
-    //     { name: "Finite Element Analysis (FEA)", path: "/services/fea" },
-    //     {
-    //         name: "3D Printing/Rapid prototyping",
-    //         path: "/services/rapid-prototyping",
-    //     },
-    //     { name: "Manufacturing/Prototyping", path: "/services/manufacturing" },
-    //     { name: "Product rendering", path: "/services/product-rendering" },
-    // ];
 
 
     const services = [
@@ -145,9 +129,8 @@ const CADLayout = ({ children }) => {
                 </div>
 
                 {/* ========================= OVERVIEW ========================= */}
-                {/* ========================= OVERVIEW ========================= */}
                 <div id="overview" ref={overviewRef} className="space-y-12 pt-4">
-                    <h2 className="text-3xl font-bold tracking-wide border-b pb-3">
+                    <h2 className="text-3xl text-[#1e3a8a] font-bold tracking-wide border-b pb-3">
                         Overview
                     </h2>
 
@@ -171,16 +154,9 @@ const CADLayout = ({ children }) => {
                     {/* IMAGE + CONVERSION CARDS */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-                        {/* LEFT IMAGE */}
-                        <div>
-                            <img
-                                src={CAD}
-                                alt="CAD Conversion"
-                                className="rounded-xl shadow-md w-full object-cover"
-                            />
-                        </div>
 
-                        {/* RIGHT CARDS */}
+
+                        {/* Left CARDS */}
                         <div className="space-y-8">
 
                             {/* 3D TO 2D */}
@@ -218,24 +194,34 @@ const CADLayout = ({ children }) => {
                             </div>
 
                         </div>
+
+                        {/* Right IMAGE */}
+                        <div>
+                            <img
+                                src={CAD}
+                                alt="CAD Conversion"
+                                className="rounded-xl shadow-md w-full object-cover"
+                            />
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900">
+                            <h3 className="text-[22px] font-semibold mb-3 text-gray-900">
+                                Key Benefits
+                            </h3>
+                            <ul className="list-disc pl-6 space-y-2 text-[18px]">
+                                <li>Improved design versatility and collaboration</li>
+                                <li>Faster manufacturing readiness with accurate data</li>
+                                <li>Reduced errors and rework during production</li>
+                                <li>Enhanced visualization for stakeholders</li>
+                                <li>Long-term engineering data preservation</li>
+                            </ul>
+                        </div>
                     </div>
 
                     {/* KEY BENEFITS – FULL WIDTH */}
-                    <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900">
-                        <h3 className="text-[22px] font-semibold mb-3 text-gray-900">
-                            Key Benefits
-                        </h3>
-                        <ul className="list-disc pl-6 space-y-2 text-[18px]">
-                            <li>Improved design versatility and collaboration</li>
-                            <li>Faster manufacturing readiness with accurate data</li>
-                            <li>Reduced errors and rework during production</li>
-                            <li>Enhanced visualization for stakeholders</li>
-                            <li>Long-term engineering data preservation</li>
-                        </ul>
-                    </div>
+
                 </div>
                 <div id="applications" ref={applicationsRef} className="mt-20 pt-4">
-                    <h2 className="text-3xl font-bold tracking-wide border-b pb-3 mb-6">
+                    <h2 className="text-3xl text-[#1e3a8a] font-bold tracking-wide border-b pb-3 mb-6">
                         Applications
                     </h2>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -279,11 +265,11 @@ const CADLayout = ({ children }) => {
                             >
                                 <div className="relative h-44 w-full">
                                     <img
-                                        src={`/images/${index + 1}.jpg`}
+                                        src={`/images/CAD/${index + 1}.jpg`}
                                         alt={item.name}
                                         className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                                     />
-                                    <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px]   text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none ">
+                                    <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#68aad3]  text-[16px]   text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none ">
                                         {item.description}
                                     </div>
                                 </div>

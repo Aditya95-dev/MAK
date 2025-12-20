@@ -11,7 +11,6 @@ export default function Overviewscanning({ children }) {
 
     const tabs = [
         { id: "overview", label: "Overview", ref: overviewRef },
-        { id: "process", label: "Process Flow", ref: processRef },
         { id: "applications", label: "Applications", ref: applicationsRef },
     ];
 
@@ -143,42 +142,52 @@ export default function Overviewscanning({ children }) {
 
                 {/* ========================= OVERVIEW ========================= */}
                 <div id="overview" ref={overviewRef} className="space-y-12 pt-4">
-                    <h2 className="text-3xl font-bold tracking-wide border-b pb-3">
+                    <h2 className="text-3xl text-[#1e3a8a] font-bold tracking-wide border-b pb-3">
                         Overview
                     </h2>
+                    <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px]">
+                        <p className="mb-2 text-gray-600 ">
+                            At <strong>MAK Design Solutions</strong>, we provide{" "}
+                            <strong>3D Scanning and Product Benchmarking </strong>{" "}
+                            services that enable businesses to analyse, replicate, and
+                            optimize products with high accuracy. Benchmarking allows
+                            companies to study competitor products and identify
+                            opportunities for improvement in terms of performance, cost,
+                            efficiency, and material usage. Combined with advanced 3D
+                            scanning technology, we deliver precise digital models that
+                            form the foundation for reverse engineering and product
+                            development.
+
+                        </p>
+                        <p className="mb-2 text-gray-600">
+                            Product benchmarking involves evaluating a
+                            competitor’s product data such as structural dimensions,
+                            material specifications, functional characteristics,
+                            manufacturing, and assembly processes in order to refer the
+                            same while reverse engineered the similar product and
+                            implement the areas of improvement
+                        </p>
+                        <p className="mb-2 text-gray-600">
+                            We apply the tear-down
+                            technique, which involves meticulous planning, data
+                            collection, data analysis, and implementation to deliver
+                            actionable insights for improved product design.
+                            <br />For collecting structural information of the product having
+                            intricate shapes, we use 3D scanning process to ensure the
+                            data accuracy. Using our 3D scanning facility, we analyze
+                            real-world objects to collect precise three-dimensional data
+                            used for constructing digital models.</p>
+                        <p className="mb-2 text-gray-600">
+                            The goal is to learn
+                            from existing designs and implement enhancements that result
+                            in cost reduction, efficiency gains, and optimized
+                            performance.
+                        </p>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
                         {/* LEFT CONTENT */}
                         <div className="space-y-8 text-[15px] leading-relaxed text-gray-700">
-                            <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px]">
-                                <p>
-                                    At <strong>MAK Design Solutions</strong>, we provide{" "}
-                                    <strong>3D Scanning and Product Benchmarking </strong>{" "}
-                                    services that enable businesses to analyse, replicate, and
-                                    optimize products with high accuracy. Benchmarking allows
-                                    companies to study competitor products and identify
-                                    opportunities for improvement in terms of performance, cost,
-                                    efficiency, and material usage. Combined with advanced 3D
-                                    scanning technology, we deliver precise digital models that
-                                    form the foundation for reverse engineering and product
-                                    development. Product benchmarking involves evaluating a
-                                    competitor’s product data such as structural dimensions,
-                                    material specifications, functional characteristics,
-                                    manufacturing, and assembly processes in order to refer the
-                                    same while reverse engineered the similar product and
-                                    implement the areas of improvement We apply the tear-down
-                                    technique, which involves meticulous planning, data
-                                    collection, data analysis, and implementation to deliver
-                                    actionable insights for improved product design. For
-                                    collecting structural information of the product having
-                                    intricate shapes, we use 3D scanning process to ensure the
-                                    data accuracy. Using our 3D scanning facility, we analyze
-                                    real-world objects to collect precise three-dimensional data
-                                    used for constructing digital models. The goal is to learn
-                                    from existing designs and implement enhancements that result
-                                    in cost reduction, efficiency gains, and optimized
-                                    performance.
-                                </p>
-                            </div>
 
                             <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px] ">
                                 <h3 className="font-semibold text-[22px] mb-3 text-black">
@@ -241,22 +250,22 @@ export default function Overviewscanning({ children }) {
                         {/* RIGHT IMAGE COLUMN */}
                         <div className="space-y-48">
                             <img
-                                src="/scanning1.jpg"
+                                src="/images/Bench1.jpg"
                                 alt="Product Design 1"
                                 className="rounded-xl shadow-md w-full object-cover "
                             />
                             <img
-                                src="/sanning2.jpg"
+                                src="/images/Bench2.jpg"
                                 alt="Product Design 2"
                                 className="rounded-xl shadow-md w-full object-cover"
                             />
                         </div>
                     </div>
 
-                    {/* ========================= PROCESS FLOW ========================= */}
+                    {/* ========================= Application ========================= */}
 
                     <div id="applications" ref={applicationsRef} className="mt-20 pt-4">
-                        <h2 className="text-3xl font-bold tracking-wide border-b pb-3 mb-6">
+                        <h2 className="text-3xl text-[#1e3a8a] font-bold tracking-wide border-b pb-3 mb-6">
                             Applications
                         </h2>
 
@@ -266,23 +275,20 @@ export default function Overviewscanning({ children }) {
                             {[
                                 {
                                     name: "Reverse Engineering",
-                                    description:
-                                        "Designing jigs, fixtures, tools, dies, molds, gauges, SPMs, material-handling systems, and installation structures.",
+                                    description: ""
                                 },
                                 {
                                     name: "Failure analysis",
-                                    description:
-                                        "Custom-built machines designed for fast, precise, and high-efficiency operations.",
+                                    description: ""
                                 },
                                 {
                                     name: "Product improvement",
-                                    description:
-                                        "Precision tools used to shape materials into accurate, consistent, and repeatable products.",
+                                    description: ""
                                 },
                                 {
                                     name: "Gap identification",
-                                    description:
-                                        "Structures designed for safe, stable, and efficient machine installation.",
+                                    description: ""
+
                                 },
                             ].map((item, index) => (
                                 <div
@@ -291,11 +297,11 @@ export default function Overviewscanning({ children }) {
                                 >
                                     <div className="relative h-44 w-full">
                                         <img
-                                            src={`/images/${index + 1}.jpg`}
+                                            src={`/images/ProductBenchmarking/${index + 1}.jpg`}
                                             alt={item.name}
                                             className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                                         />
-                                        <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
+                                        <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#68aad3] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
                                             {item.description}
                                         </div>
                                     </div>
@@ -330,11 +336,11 @@ export default function Overviewscanning({ children }) {
                                     >
                                         <div className="relative h-44 w-full">
                                             <img
-                                                src={`/images/${index + 5}.jpg`}
+                                                src={`/images/ProductBenchmarking/${index + 5}.jpg`}
                                                 alt={item.name}
                                                 className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                                             />
-                                            <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
+                                            <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#68aad3]  text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
                                                 {item.description}
                                             </div>
                                         </div>

@@ -11,7 +11,6 @@ export default function PrintingLayout({ children }) {
 
     const tabs = [
         { id: "overview", label: "Overview", ref: overviewRef },
-        { id: "process", label: "Process Flow", ref: processRef },
         { id: "applications", label: "Applications", ref: applicationsRef },
     ];
 
@@ -50,22 +49,6 @@ export default function PrintingLayout({ children }) {
         handleScroll(); // initialize
         return () => window.removeEventListener("scroll", handleScroll);
     }, [activeTab, tabs]);
-
-    // const services = [
-    //     { name: "Mechanical Product design", path: "/services/product-design-dva" },
-    //     { name: "Reverse Engineering", path: "/services/reverse-engineering" },
-    //     {
-    //         name: "3D scanning & Product Benchmarking",
-    //         path: "/services/3d-scanning",
-    //     },
-    //     { name: "CAD data conversion", path: "/services/cad-conversion" },
-    //     { name: "Finite Element Analysis (FEA)", path: "/services/fea" },
-    //     {
-    //         name: "3D Printing/Rapid prototyping", path: "/services/rapid-prototyping",
-    //     },
-    //     { name: "Manufacturing/Prototyping", path: "/services/manufacturing" },
-    //     { name: "Product rendering", path: "/services/product-rendering" },
-    // ];
 
 
     const services = [
@@ -145,34 +128,51 @@ export default function PrintingLayout({ children }) {
 
                 {/* ========================= OVERVIEW ========================= */}
                 <div id="overview" ref={overviewRef} className="space-y-12 pt-4">
-                    <h2 className="text-3xl font-bold tracking-wide border-b pb-3">
+                    <h2 className="text-3xl text-blue-900 font-bold tracking-wide border-b pb-3">
                         Overview
                     </h2>
                     <div className="">
                         {/* LEFT CONTENT */}
                         <div className="space-y-8 text-[15px] leading-relaxed text-gray-700">
-                            <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px]">
-                                <p>
-                                    3D Printing, also known as Additive Manufacturing, is a cutting-edge process of creating three-dimensional objects by adding successive layers of material based on a digital file.
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+                                {/* LEFT CONTENT */}
+                                <div className="space-y-8 text-[15px] leading-relaxed text-gray-700">
+                                    <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-900 text-[18px]">
+                                        <p>
+                                            3D Printing, also known as Additive Manufacturing, is a cutting-edge process of creating three-dimensional objects by adding successive layers of material based on a digital file.
 
-                                </p>
-                                <p className="mt-3">
-                                    At MAK Design Solutions, we support our design with rapid prototyping with high-precision 3D printing services that help design validation and refining before moving into mass production.
+                                        </p>
+                                        <p className="mt-3">
+                                            At MAK Design Solutions, we support our design with rapid prototyping with high-precision 3D printing services that help design validation and refining before moving into mass production.
 
-                                </p>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* RIGHT IMAGE COLUMN */}
+                                <div className="space-y-48">
+                                    <img
+                                        src="/images/3DesignProto.jpg"
+                                        alt="Product Design 1"
+                                        className="rounded-xl shadow-md w-full object-cover "
+                                    />
+                                </div>
+
+
                             </div>
+
 
 
                             {/* ===================== 3D PRINTING PROCESS ===================== */}
                             <div className="space-y-10">
 
                                 {/* HEADING */}
-                                <h2 className="text-3xl font-bold tracking-wide border-b pb-3">
+                                <h2 className="text-[22px] font-semibold tracking-wide border-b text-black pb-3">
                                     3D Printing Process
                                 </h2>
 
                                 {/* INTRO */}
-                                <p className="text-[18px] text-gray-700 leading-relaxed max-w-4xl">
+                                <p className="text-[18px] text-gray-900 leading-relaxed max-w-4xl">
                                     Our 3D printing process ensures high precision, repeatability, and
                                     quality from concept to final part. Each stage is carefully optimized
                                     to deliver reliable and accurate printed components.
@@ -187,7 +187,7 @@ export default function PrintingLayout({ children }) {
                                         <h3 className="text-[20px] font-semibold mb-2">
                                             CAD Model Creation
                                         </h3>
-                                        <p className="text-gray-700 text-[16px] leading-relaxed">
+                                        <p className="text-gray-700 text-[18px] leading-relaxed">
                                             Develop a precise 3D model using CAD software or generate it through
                                             advanced 3D scanning techniques.
                                         </p>
@@ -199,7 +199,7 @@ export default function PrintingLayout({ children }) {
                                         <h3 className="text-[20px] font-semibold mb-2">
                                             Slicing
                                         </h3>
-                                        <p className="text-gray-700 text-[16px] leading-relaxed">
+                                        <p className="text-gray-700 text-[18px] leading-relaxed">
                                             Convert the 3D design into G-code using slicer software, defining
                                             layer height, speed, and print parameters.
                                         </p>
@@ -211,7 +211,7 @@ export default function PrintingLayout({ children }) {
                                         <h3 className="text-[20px] font-semibold mb-2">
                                             Printing
                                         </h3>
-                                        <p className="text-gray-700 text-[16px] leading-relaxed">
+                                        <p className="text-gray-700 text-[18px] leading-relaxed">
                                             Advanced printers follow the G-code to deposit, fuse, or solidify
                                             material layer by layer until the object is complete.
                                         </p>
@@ -223,7 +223,7 @@ export default function PrintingLayout({ children }) {
                                         <h3 className="text-[20px] font-semibold mb-2">
                                             Post-Processing
                                         </h3>
-                                        <p className="text-gray-700 text-[16px] leading-relaxed">
+                                        <p className="text-gray-700 text-[18px] leading-relaxed">
                                             Cleaning, finishing, and coloring the printed object to meet desired
                                             surface quality and functional standards.
                                         </p>
@@ -254,7 +254,7 @@ export default function PrintingLayout({ children }) {
 
                                 {/* LEFT HIGHLIGHT PANEL */}
                                 <div className="lg:col-span-1 bg-blue-900 mt-32 text-white p-8 rounded-2xl shadow-md">
-                                    <h2 className="text-3xl font-bold mb-4">
+                                    <h2 className="text-2xl font-bold mb-4">
                                         Benefits of 3D Printing/Rapid prototyping
 
                                     </h2>
@@ -265,7 +265,7 @@ export default function PrintingLayout({ children }) {
                                 <div className="lg:col-span-2 space-y-6">
 
                                     <div className="flex gap-4 items-start">
-                                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-900 font-bold">
+                                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 text-white font-bold">
                                             1
                                         </div>
                                         <div>
@@ -280,7 +280,7 @@ export default function PrintingLayout({ children }) {
                                     </div>
 
                                     <div className="flex gap-4 items-start">
-                                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-900 font-bold">
+                                        <div className="w-10 h-10 flex items-center  bg-blue-900 text-white  justify-center rounded-full  font-bold">
                                             2
                                         </div>
                                         <div>
@@ -295,7 +295,7 @@ export default function PrintingLayout({ children }) {
                                     </div>
 
                                     <div className="flex gap-4 items-start">
-                                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-900 font-bold">
+                                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 text-white  font-bold">
                                             3
                                         </div>
                                         <div>
@@ -310,7 +310,7 @@ export default function PrintingLayout({ children }) {
                                     </div>
 
                                     <div className="flex gap-4 items-start">
-                                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-900 font-bold">
+                                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 text-white  font-bold">
                                             4
                                         </div>
                                         <div>
@@ -325,7 +325,7 @@ export default function PrintingLayout({ children }) {
                                     </div>
 
                                     <div className="flex gap-4 items-start">
-                                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-900 font-bold">
+                                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 text-white  font-bold">
                                             5
                                         </div>
                                         <div>
@@ -345,61 +345,87 @@ export default function PrintingLayout({ children }) {
                     </div>
 
                     {/* Application */}
+                    <div>
+                        <h1 className="text-3xl text-blue-900 font-bold tracking-wide border-b pb-3">Application</h1>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
 
-                    <div id="applications" ref={applicationsRef} className="mt-20 pt-4">
-                        <h2 className="text-3xl font-bold tracking-wide border-b pb-3 mb-6">
-                            Applications
-                        </h2>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                        {/* ---------- FIRST ROW : 4 CARDS ---------- */}
+                        {[
+                            {
+                                name: "Rapid prototyping",
+                                description: "",
+                            },
+                            {
+                                name: "Research",
+                                description: "",
+                            },
+                            {
+                                name: "Product exhibits",
+                                description: "",
+                            },
+                            {
+                                name: "Education & Research",
+                                description: "",
+                            },
+                            {
+                                name: "Medical applications",
+                                description: "",
+                            },
+
+                        ].map((item, index) => (
+                            <div
+                                key={index}
+                                className="relative group rounded-md overflow-hidden shadow-sm bg-white hover:shadow-lg transition cursor-pointer"
+                            >
+                                <div className="relative h-44 w-full">
+                                    <img
+                                        src={`/images/3DPrinting/${index + 1}.jpg`}
+                                        alt={item.name}
+                                        className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
+                                    />
+                                    <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
+                                        {item.description}
+                                    </div>
+                                </div>
+                                <div className="bg-blue-900 text-white text-center py-2 text-md font-medium">
+                                    {item.name}
+                                </div>
+                            </div>
+                        ))}
+
+                        {/* ---------- SECOND ROW : CENTERED 4 CARDS ---------- */}
+                        <div className="col-span-full flex justify-center gap-6">
                             {[
                                 {
-                                    name: "Rapid prototyping",
-                                    description: ""
-                                },
-                                {
-                                    name: "Research",
-                                    description: ""
-                                },
-                                {
-                                    name: "Product exhibits",
-                                    description: ""
-                                },
-                                {
-                                    name: "Education & Research",
-                                    description: ""
-                                },
-                                {
-                                    name: "Medical applications",
-                                    description: ""
-                                },
-                                {
                                     name: "Cultural heritage",
-                                    description: ""
+                                    description: "",
                                 },
                                 {
-                                    name: "Art & Jewellery ",
-                                    description: ""
+                                    name: "Art & Jewellery",
+                                    description: "",
                                 },
                                 {
                                     name: "Toys & Gifts",
-                                    description: ""
+                                    description: "",
                                 },
                                 {
                                     name: "Apparel",
-                                    description: ""
-                                }
+                                    description: "",
+                                },
                             ].map((item, index) => (
                                 <div
                                     key={index}
-                                    className="relative group rounded-md overflow-hidden shadow-sm bg-white hover:shadow-lg transition cursor-pointer"
+                                    style={{ width: 'calc((100% - 96px) / 5)' }}
+                                    className="relative group rounded-md overflow-hidden shadow-sm bg-white hover:shadow-lg transition cursor-pointer w-full max-w-[260px]"
                                 >
                                     <div className="relative h-44 w-full">
                                         <img
-                                            src={`/images/${index + 1}.jpg`}
+                                            src={`/images/3DPrinting/${index + 6}.jpg`}
                                             alt={item.name}
                                             className="h-full w-full object-fill transition duration-300 group-hover:blur group-hover:brightness-75"
                                         />
-                                        <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px]   text-center opacity-0 transition duration-300 group-hover:opacity-100 pointer-events-none ">
+                                        <div className="absolute inset-0 flex items-center justify-center px-4 text-black bg-[#e9f7ff] text-[16px] text-center opacity-0 transition duration-300 group-hover:opacity-100">
                                             {item.description}
                                         </div>
                                     </div>
@@ -408,13 +434,24 @@ export default function PrintingLayout({ children }) {
                                     </div>
                                 </div>
                             ))}
-
-                            {/* CHILDREN */}
-                            <div className="">{children}</div>
                         </div>
+
+                        {/* ---------- CHILDREN ---------- */}
+                        {children && (
+                            <div className="col-span-full">
+                                {children}
+                            </div>
+                        )}
+
                     </div>
+
+
                 </div>
             </div >
         </div>
     );
 }
+
+
+
+
