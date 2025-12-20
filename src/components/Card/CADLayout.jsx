@@ -164,7 +164,7 @@ const CADLayout = ({ children }) => {
                                 <h3 className="font-semibold text-[22px] mb-3 text-black">
                                     3D to 2D Conversion
                                 </h3>
-                                <p className="text-[16px] mb-2">
+                                <p className="text-[18px] mb-2">
                                     Converting 3D models into detailed 2D drawings supports:
                                 </p>
                                 <ul className="list-disc pl-6 space-y-2 text-[18px]">
@@ -181,7 +181,7 @@ const CADLayout = ({ children }) => {
                                 <h3 className="font-semibold text-black mb-3 text-[22px]">
                                     2D to 3D Conversion
                                 </h3>
-                                <p className="mb-2">
+                                <p className="mb-2 text-[18px]">
                                     Converting 2D drawings into interactive 3D models enables:
                                 </p>
                                 <ul className="list-disc pl-6 space-y-2 text-[18px]">

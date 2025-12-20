@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function NavbarCyan() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -104,9 +105,13 @@ export default function NavbarCyan() {
 
           <Link
             to="/contact"
-            className="px-6 py-2.5 rounded-lg text-white bg-gradient-to-r from-[#062a66] to-[#6ca3de]"
+            className="flex items-center gap-2 px-6 py-2.5  border border-green-400 rounded-3xl border-b-3xl  
+             
+             hover:opacity-90 transition"
           >
-            Contact Us
+            <FaWhatsapp className="text-3xl text-green-600" />
+            Whatsapp
+
           </Link>
         </nav>
 

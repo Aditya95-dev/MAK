@@ -272,7 +272,7 @@ export default function PrintingLayout({ children }) {
                                             <h3 className="text-[20px] font-semibold">
                                                 Design Flexibility
                                             </h3>
-                                            <p className="text-gray-700 text-[16px] leading-relaxed">
+                                            <p className="text-gray-700 text-[18px] leading-relaxed">
                                                 Create intricate and complex geometries that are not possible
                                                 with traditional manufacturing techniques.
                                             </p>
@@ -287,7 +287,7 @@ export default function PrintingLayout({ children }) {
                                             <h3 className="text-[20px] font-semibold">
                                                 Cost-Effective for Low Volume
                                             </h3>
-                                            <p className="text-gray-700 text-[16px] leading-relaxed">
+                                            <p className="text-gray-700 text-[18px] leading-relaxed">
                                                 Avoid expensive tooling and molds, making it ideal for
                                                 prototyping and small batch production.
                                             </p>
@@ -302,7 +302,7 @@ export default function PrintingLayout({ children }) {
                                             <h3 className="text-[20px] font-semibold">
                                                 Faster Prototyping
                                             </h3>
-                                            <p className="text-gray-700 text-[16px] leading-relaxed">
+                                            <p className="text-gray-700 text-[18px] leading-relaxed">
                                                 Significantly reduces product development time by enabling
                                                 rapid iterations and quick design validation.
                                             </p>
@@ -317,7 +317,7 @@ export default function PrintingLayout({ children }) {
                                             <h3 className="text-[20px] font-semibold">
                                                 Reduced Waste
                                             </h3>
-                                            <p className="text-gray-700 text-[16px] leading-relaxed">
+                                            <p className="text-gray-700 text-[18px] leading-relaxed">
                                                 Additive manufacturing uses only the material required,
                                                 making it a more sustainable production method.
                                             </p>
@@ -332,7 +332,7 @@ export default function PrintingLayout({ children }) {
                                             <h3 className="text-[20px] font-semibold">
                                                 Mass Customization
                                             </h3>
-                                            <p className="text-gray-700 text-[16px] leading-relaxed">
+                                            <p className="text-gray-700 text-[18px] leading-relaxed">
                                                 Enables creation of personalized and custom-fit products
                                                 tailored to unique customer requirements.
                                             </p>

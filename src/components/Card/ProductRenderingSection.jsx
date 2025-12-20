@@ -350,7 +350,7 @@ export default function ProductRenderingSection() {
                                     <h3 className="text-[22px] font-semibold mb-3">
                                         Product Rendering
                                     </h3>
-                                    <p className="text-[16px]">Our product rendering services create photo-realistic images in a virtual environment, helping businesses visualize and market their products effectively.</p>
+                                    <p className="text-[18px]">Our product rendering services create photo-realistic images in a virtual environment, helping businesses visualize and market their products effectively.</p>
                                     <ul className="list-disc pl-6 pt-4 text-[18px] space-y-2">
                                         <li>Conceptualization & Planning</li>
                                         <li>3D Modeling</li>
@@ -366,7 +366,7 @@ export default function ProductRenderingSection() {
                                     <h3 className="text-[22px] font-semibold mb-3">
                                         Key Benefits of Product Rendering
                                     </h3>
-                                    <p className="text-[16px]">Our product rendering services create photo-realistic images in a virtual environment, helping businesses visualize and market their products effectively.</p>
+                                    <p className="text-[18px]">Our product rendering services create photo-realistic images in a virtual environment, helping businesses visualize and market their products effectively.</p>
                                     <ul className="list-disc pl-6 pt-4 text-[18px] space-y-2">
                                         <li>
                                             Cost & Time Saving – Eliminates the need for physical prototypes and expensive photoshoots

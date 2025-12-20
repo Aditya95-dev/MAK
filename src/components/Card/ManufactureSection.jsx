@@ -125,7 +125,7 @@ export default function ManufactureSection({ children }) {
                             <div className="space-y-10">
 
                                 {/* Overview Card */}
-                                <div className="bg-white p-8 border-l-4 border-blue-900 rounded-2xl shadow-md  text-[16px] leading-relaxed text-gray-700">
+                                <div className="bg-white p-8 border-l-4 border-blue-900 rounded-2xl shadow-md  text-[17px] leading-relaxed text-gray-700">
                                     <p>
                                         At <strong>MAK Design Solutions</strong>, we bridge the gap
                                         between digital design and physical reality through
@@ -141,8 +141,8 @@ export default function ManufactureSection({ children }) {
                                         Key Benefits
                                     </h3>
 
-                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5 text-[16px] leading-relaxed text-gray-700">
-                                        <li className="flex items-start gap-3">
+                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5 text-[18px] leading-relaxed text-gray-700">
+                                        <li className="flex items-start  gap-3">
                                             <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-900"></span>
                                             <span>
                                                 <strong>Early Flaw Detection –</strong> Identify and fix design issues at
