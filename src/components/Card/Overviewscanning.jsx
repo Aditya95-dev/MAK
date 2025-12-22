@@ -275,19 +275,19 @@ export default function Overviewscanning({ children }) {
                             {[
                                 {
                                     name: "Reverse Engineering",
-                                    description: ""
+                                    description: "Decoding existing products to optimize design and reduce costs."
                                 },
                                 {
                                     name: "Failure analysis",
-                                    description: ""
+                                    description: "Identifying root causes to prevent future breakdowns."
                                 },
                                 {
                                     name: "Product improvement",
-                                    description: ""
+                                    description: "Enhancing products for better performance and customer satisfaction."
                                 },
                                 {
                                     name: "Gap identification",
-                                    description: ""
+                                    description: "Spotting gaps to bridge the difference between current and desired outcomes."
 
                                 },
                             ].map((item, index) => (
@@ -316,18 +316,15 @@ export default function Overviewscanning({ children }) {
                                 {[
                                     {
                                         name: "Competitive comparison",
-                                        description:
-                                            "High-precision tooling used to produce clean, accurate, and burr-free metal parts.",
+                                        description: "Analyzing competitors to uncover strengths and weaknesses.",
                                     },
                                     {
                                         name: "Digitalization",
-                                        description:
-                                            "Tools designed to measure and verify component accuracy with high precision.",
+                                        description: "Leveraging digital tools to transform processes and efficiency.",
                                     },
                                     {
                                         name: "Product benchmarking",
-                                        description:
-                                            "Equipment engineered to move, lift, and handle materials safely and efficiently",
+                                        description: "Measuring performance against standards to stay ahead in the market.",
                                     },
                                 ].map((item, index) => (
                                     <div

@@ -228,35 +228,35 @@ const CADLayout = ({ children }) => {
                         {[
                             {
                                 name: "CAD conversion 2D to 3D",
-                                description: ""
+                                description: "Transforming flat sketches into precise 3D models."
                             },
                             {
                                 name: "CAD conversion 3D to 2D",
-                                description: ""
+                                description: "Creating detailed 2D drawings from 3D designs."
                             },
                             {
                                 name: "Drafting & Detailing",
-                                description: ""
+                                description: "Turning concepts into accurate, manufacturable plans."
                             },
                             {
                                 name: "Manufacturing",
-                                description: ""
+                                description: "Bringing designs to life with precision engineering."
                             },
                             {
                                 name: "Rapid prototyping",
-                                description: ""
+                                description: "Quickly creating tangible models from digital designs."
                             },
                             {
                                 name: "Digitalization",
-                                description: ""
+                                description: "Modernizing mechanical design tools for smarter workflows."
                             },
                             {
                                 name: "Design validation",
-                                description: ""
+                                description: "Ensuring every design works flawlessly before production"
                             },
                             {
                                 name: "Product design",
-                                description: ""
+                                description: "Innovating functional and aesthetic products from concept to reality."
                             },
                         ].map((item, index) => (
                             <div

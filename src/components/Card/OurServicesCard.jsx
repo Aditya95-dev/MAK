@@ -263,7 +263,7 @@ const OurServicesCard = ({ children }) => {
                         <h3 className="text-[22px] font-semibold mb-3 text-gray-900">
                             Benefits of Reverse Engineering
                         </h3>
-                        <ul className="list-disc pl-6 space-y-2 text-[18px]">
+                        <ul className="list-disc text-gray-800 pl-6 space-y-2 text-[18px]">
                             <li>Recreate obsolete or unavailable parts</li>
                             <li>Enhance performance while reducing cost</li>
                             <li>Accelerate time-to-market</li>
