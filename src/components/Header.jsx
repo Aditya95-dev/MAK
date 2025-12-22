@@ -112,6 +112,9 @@ export default function NavbarCyan() {
             <FaWhatsapp className="text-3xl text-green-600" />
             Whatsapp
 
+
+
+
           </Link>
         </nav>
 

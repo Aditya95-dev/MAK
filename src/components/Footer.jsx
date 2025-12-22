@@ -5,20 +5,20 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-gray-200">
-      
-      
+
+
 
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
-        
+
         {/* Company Info */}
         <div>
           <h2 className="text-xl font-bold tracking-wide text-white">
             MAK Design Solutions
           </h2>
           <p className="mt-4 text-sm text-gray-400 leading-relaxed">
-            Innovative engineering, reliable solutions.  
+            Innovative engineering, reliable solutions.
             We deliver product design, reverse engineering, prototyping & advanced 3D solutions.
           </p>
         </div>
@@ -30,9 +30,9 @@ export default function Footer() {
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-gray-400">
             <li><a href="/" className="hover:text-green-400 transition">Home</a></li>
-            <li><a href="/about/company" className="hover:text-green-400 transition">About Us</a></li>
+            <li><a href="/about" className="hover:text-green-400 transition">About Us</a></li>
             <li><a href="/services" className="hover:text-green-400 transition">Services</a></li>
-            <li><a href="/industries" className="hover:text-green-400 transition">Industries</a></li>
+            <li><a href="/blog" className="hover:text-green-400 transition">Blog</a></li>
             <li><a href="/contact" className="hover:text-green-400 transition">Contact</a></li>
           </ul>
         </div>
@@ -43,14 +43,18 @@ export default function Footer() {
             Services
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-gray-400">
+            <li><a href="/services/product-design-dva" className="hover:text-green-400 transition">Mechanical Product Design  </a></li>
             <li><a href="/services/reverse-engineering" className="hover:text-green-400 transition">Reverse Engineering</a></li>
-            <li><a href="/services/prototyping" className="hover:text-green-400 transition">Prototyping</a></li>
-            <li><a href="/services/3d-modeling" className="hover:text-green-400 transition">3D Modeling</a></li>
-            <li><a href="/services/rendering" className="hover:text-green-400 transition">Rendering & Visualization</a></li>
-            <li><a href="/services/fea" className="hover:text-green-400 transition">FEA Analysis</a></li>
+            <li><a href="/services/3d-scanning-benchmarking" className="hover:text-green-400 transition">3D Scanning and Product Benchmarking</a></li>
+            <li><a href="/services/cad-data-conversion" className="hover:text-green-400 transition">CAD Data Conversion</a></li>
+            <li><a href="/services/fea" className="hover:text-green-400 transition">Finite Element Analysis</a></li>
+            <li><a href="/services/3d-printing-rapid-prototyping" className="hover:text-green-400 transition">3D Printing/Rapid Prototyping</a></li>
+            <li><a href="/services/manufacturing-prototyping" className="hover:text-green-400 transition">Manufacturing and Prototyping</a></li>
+            <li><a href="/services/product-rendering-technical-animation" className="hover:text-green-400 transition">Product Rendering </a></li>
+
+
           </ul>
         </div>
-
         {/* Contact & Social */}
         <div>
           <div className="mt-6 text-sm text-gray-400 space-y-1">
@@ -81,7 +85,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 py-4 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} MAK Design Solutions. All Rights Reserved.  
+        © {new Date().getFullYear()} MAK Design Solutions. All Rights Reserved.
         <br />
         <span className="text-green-400">
           Designed by ArrayLogic Softwares Pvt. Ltd.
